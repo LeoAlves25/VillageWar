@@ -30,6 +30,7 @@ header#cabecalho{
     background-color: white;
     margin: 0px;
     font-family: 'FontePixel';
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header#cabecalho ul{
@@ -44,6 +45,13 @@ header#cabecalho li{
     margin-left: 20px;
 }
 
+img#logo{
+    position: relative;
+    width: 200px;
+    left: 1090px;
+    top: 10px;
+}
+
 /*corpo*/
 
 section{
@@ -53,6 +61,7 @@ section{
     margin: 80px auto auto auto;
     background-color: white;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 section input.butao{
