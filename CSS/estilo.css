@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FontePixel';
+    src: url('../Fonts/8-bit-pusab.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: linear-gradient(100deg , #fd4415, #fa7d0f);
+}
+a{
+    color: #fd5822;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #d33804;
+}
+
+/*cabecalho*/
+
+header#cabecalho{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    margin: 0px;
+    font-family: 'FontePixel';
+}
+
+header#cabecalho ul{
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 35px;
+}
+
+header#cabecalho li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/*corpo*/
+
+section{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    margin: 80px auto auto auto;
+    background-color: white;
+    border-radius: 15px;
+}
+
+section input.butao{
+    font-family: Arial;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #fd5822;
+    background-color: white;
+    width: 105px;
+    height: 40px;
+    margin: 5px 10px auto 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+section input.butao:hover{
+    color: #862302;
+}
+
+section div#cartas{
+    width:750px;
+    height: 340px;
+    margin: 5px 0px auto 30px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+div#cartas li{
+    display: inline-block;
+    padding: 14px;
+}
+
+div#cartas img{
+    width: 153px;
+}
+
+div#cartaBau li{
+    display: inline-block;
+    padding: 14px;
+}
+
+div#cartaBau img{
+    width: 153px;
+}
+
+div#cartaBau{
+    position: relative;
+    top: 160px;
+    left: 139px;
+}
+
+section img#bau{
+    position: absolute;
+    top: 25px;
+    margin: 0px 0px 0px 350px;
+}
+
+/*Rodapé*/
+
+footer{
+    font-family: 'FontePixel';
+    font-size: 10pt;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+
+footer a#git{
+    color: white;
+}
