@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face{
     font-family: 'FontePixel';
-    src: url('../Fonts/8-bit-pusab.ttf');
+    src: url('../fonts/8-bit-pusab.ttf');
 }
 
 *{
@@ -135,6 +135,7 @@ div#cartaBau{
 }
 
 section img#bau{
+    cursor: pointer;
     position: absolute;
     top: 25px;
     margin: 0px 0px 0px 350px;

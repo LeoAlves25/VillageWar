@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village War</title>
-    <script src="JavaScript/funcoes.js" async></script>
-    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="icon" type="image/x-icon" href="imgs/Logo_VillageWar.png">
+    <script src="src/cartas/Cartas.js" async></script>
+    <script src="src/cartas/MinhasCartas.js" async></script>
+    <script src="src/cartas/ComprarCartas.js" async></script>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header id="cabecalho">
@@ -16,17 +19,17 @@
             <li><a href="comprar.html">Comprar Cartas</a></li>
         </ul>
 
-        <img id="logo" src="Imagens/Logo_VillageWar.png">
+        <img id="logo" src="imgs/Logo_VillageWar.png">
         
     </header>
     <section>
-        <img id="bau" src="Imagens/chest.png" onclick="bauAberto()">
+        <img id="bau" src="imgs/chest.png" onclick="bauAberto()">
 
         <div id="cartaBau">
             <ul>
-                <li><img src="Imagens/Cavaleiro_raro.png"></li>
-                <li><img src="Imagens/Mago_raro.png"></li>
-                <li><img src="Imagens/MedicoDaPeste_raro.png"></li>
+                <li><img id="cartaComprada1" src="imgs/indefinido.png"></li>
+                <li><img id="cartaComprada2" src="imgs/indefinido.png"></li>
+                <li><img id="cartaComprada3" src="imgs/indefinido.png"></li>
             </ul>
         </div>
     </section>
