@@ -6,6 +6,9 @@ function bauAberto(){
 
 function bauFechado(){
     document.getElementById("bau").src = "imgs/chest.png"
+    document.getElementById("cartaComprada1").style.boxShadow = "none"; 
+    document.getElementById("cartaComprada2").style.boxShadow = "none"; 
+    document.getElementById("cartaComprada3").style.boxShadow = "none"; 
     document.getElementById("cartaComprada1").src = "imgs/indefinido.png";
     document.getElementById("cartaComprada2").src = "imgs/indefinido.png";
     document.getElementById("cartaComprada3").src = "imgs/indefinido.png";
@@ -30,13 +33,39 @@ function gerarCartas(){
     imagem = gerarImagemPersonagem(nome, raridade);
     carta3 = new Carta(nome, raridade, imagem);
 
-    setTimeout(() => {document.getElementById("cartaComprada1").src = carta1.imgCarta}, 200);
-    setTimeout(() => {document.getElementById("cartaComprada2").src = carta2.imgCarta}, 400);
-    setTimeout(() => {document.getElementById("cartaComprada3").src = carta3.imgCarta}, 600);
+    function brilhoAoConseguirCartasRaras(){
+        if(carta1.getRaridade == "Raro"){
+                document.getElementById("cartaComprada1").style.boxShadow = "0 4px 8px #42c5f5"; 
+        } else if(carta1.getRaridade == "Lendario"){
+                document.getElementById("cartaComprada1").style.boxShadow = "0 4px 8px #ff990a"; 
+        } else if(carta1.getRaridade == "Mitico"){
+                document.getElementById("cartaComprada1").style.boxShadow = "0 4px 8px #ff0537"; 
+        }
+        if(carta2.getRaridade == "Raro"){
+                document.getElementById("cartaComprada2").style.boxShadow = "0 4px 8px #42c5f5"; 
+        } else if(carta2.getRaridade == "Lendario"){
+                document.getElementById("cartaComprada2").style.boxShadow = "0 4px 8px #ff990a"; 
+        } else if(carta2.getRaridade == "Mitico"){
+                document.getElementById("cartaComprada2").style.boxShadow = "0 4px 8px #ff0537"; 
+        }
+        if(carta3.getRaridade == "Raro"){
+                document.getElementById("cartaComprada3").style.boxShadow = "0 4px 8px #42c5f5"; 
+        } else if(carta3.getRaridade == "Lendario"){
+                document.getElementById("cartaComprada3").style.boxShadow = "0 4px 8px #ff990a"; 
+        } else if(carta3.getRaridade == "Mitico"){
+                document.getElementById("cartaComprada3").style.boxShadow = "0 4px 8px #ff0537"; 
+        }
+    }
 
-    localStorage.setItem("cartasNome", localStorage.getItem("cartasNome") + carta1.nome +"_" + carta2.nome +"_" + carta3.nome +"_");
-    localStorage.setItem("cartasRaridade", localStorage.getItem("cartasRaridade") + carta1.raridade +"_" + carta2.raridade +"_" + carta3.raridade +"_");
-    localStorage.setItem("cartasImagens", localStorage.getItem("cartasImagens") + carta1.imgCarta +"*" + carta2.imgCarta +"*" + carta3.imgCarta +"*");
+    setTimeout(() => {document.getElementById("cartaComprada1").src = carta1.getImgCarta}, 200);
+    setTimeout(() => {document.getElementById("cartaComprada2").src = carta2.getImgCarta}, 400);
+    setTimeout(() => {document.getElementById("cartaComprada3").src = carta3.getImgCarta}, 600);
+    brilhoAoConseguirCartasRaras();
+
+
+    localStorage.setItem("cartasNome", localStorage.getItem("cartasNome") + carta1.getNome +"_" + carta2.getNome +"_" + carta3.getNome +"_");
+    localStorage.setItem("cartasRaridade", localStorage.getItem("cartasRaridade") + carta1.getRaridade +"_" + carta2.getRaridade +"_" + carta3.getRaridade +"_");
+    localStorage.setItem("cartasImagens", localStorage.getItem("cartasImagens") + carta1.getImgCarta +"*" + carta2.getImgCarta +"*" + carta3.getImgCarta +"*");
 
     console.log(carta1);
     console.log(carta2);

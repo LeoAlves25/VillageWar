@@ -72,7 +72,7 @@ section input.butao{
     background-color: white;
     width: 105px;
     height: 40px;
-    margin: 5px 10px auto 70px;
+    margin: 5px 5px auto 35px;
     cursor: pointer;
     border-radius: 10px;
     border: none;
@@ -139,6 +139,10 @@ section img#bau{
     position: absolute;
     top: 25px;
     margin: 0px 0px 0px 350px;
+}
+
+.minhasCartas{
+    cursor: pointer;
 }
 
 /*Rodapé*/
