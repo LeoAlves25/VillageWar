@@ -23,17 +23,17 @@ function gerarCartas(){
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta1 = new Carta(nome, raridade, imagem);
+    carta1 = new CartaComprada(nome, raridade, imagem);
 
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta2 = new Carta(nome, raridade, imagem);
+    carta2 = new CartaComprada(nome, raridade, imagem);
 
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta3 = new Carta(nome, raridade, imagem);
+    carta3 = new CartaComprada(nome, raridade, imagem);
 
     function brilhoAoConseguirCartasRaras(){
         if(carta1.getRaridade == "Raro"){
