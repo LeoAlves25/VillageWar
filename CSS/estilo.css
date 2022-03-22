@@ -53,6 +53,19 @@ img#logo{
 }
 
 /*corpo*/
+div#deck {
+    margin-right: 30%;
+    margin-top: 5%;
+}
+
+aside{
+    display: block;
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    margin: -400px auto auto 68%;
+    border-radius: 15px;
+}
 
 section{
     width: 800px;
@@ -134,10 +147,10 @@ div#cartaBau{
     left: 139px;
 }
 
-section img#bau{
+section input#bau{
     cursor: pointer;
     position: absolute;
-    top: 25px;
+    bottom: 270px;
     margin: 0px 0px 0px 350px;
 }
 

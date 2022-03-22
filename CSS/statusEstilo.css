@@ -1,0 +1,122 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FontePixel';
+    src: url('../fonts/8-bit-pusab.ttf');
+}
+
+p{
+    font-family: 'FontePixel';
+}
+
+body#status{
+    width: 200px;
+}
+
+img{
+    width: 160pt;
+}
+
+img#iconeStatus{
+    width: 18px;
+}
+
+div{
+    margin-top: -120px;
+}
+
+article{
+    margin-bottom: 100px;
+}
+
+article p#level {
+    font-size: 14pt;
+    position: relative;
+    top: -260px;
+    left: 220px;
+}
+
+article p#idPersonagem{
+    font-size: 15pt;
+    position: relative;
+    top: -270px;
+    left: 220px;
+}
+
+div#statusForca {
+    margin-bottom: 1%;
+    width: 215px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+div#statusForca p{
+    text-align: center;
+    color: #ffff00;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #52524d;
+    text-shadow: 2px 2px #000000
+}
+
+div#statusMagia {
+    margin-top: 1%;
+    width: 215px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+div#statusMagia p{
+    text-align: center;
+    color: #ffff00;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    background-color:#52524d;
+    text-shadow: 2px 2px #000000
+}
+
+div#statusDefesa {
+    margin-top: 1%;
+    width: 215px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+div#statusDefesa p{
+    text-align: center;
+    color: #ffff00;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    background-color:#52524d;
+    text-shadow: 2px 2px #000000
+}
+
+div#statusVida {
+    margin-top: 1%;
+    width: 215px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+div#statusVida p{
+    text-align: center;
+    color: #ffff00;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    background-color:#52524d;
+    text-shadow: 2px 2px #000000
+}
+
+iframe#frame-spec {
+    width: 400px;
+    height: 390px;
+    border: none;
+    overflow: hidden;
+}

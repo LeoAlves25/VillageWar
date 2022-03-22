@@ -1,10 +1,12 @@
 function bauAberto(){
     document.getElementById("bau").src = "imgs/chest_open.png"
+    document.getElementById("bau").disabled = true; 
     setTimeout(gerarCartas, 100);
     setTimeout(bauFechado, 4000);
 }
 
 function bauFechado(){
+    document.getElementById("bau").disabled = false;    
     document.getElementById("bau").src = "imgs/chest.png"
     document.getElementById("cartaComprada1").style.boxShadow = "none"; 
     document.getElementById("cartaComprada2").style.boxShadow = "none"; 
