@@ -19,7 +19,7 @@ let nomeDasCartasMiticas = ["Noel"];
 
 let raridadeDasCartas = ["Comum", "Raro","Lendario", "Mitico"];
 
-class Carta {
+class CartaComprada {
     constructor(nome, raridade, imgCarta) {
         this.nome = nome;
         this.raridade = raridade;

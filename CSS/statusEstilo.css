@@ -4,119 +4,151 @@
     src: url('../fonts/8-bit-pusab.ttf');
 }
 
-p{
+p, h2{
     font-family: 'FontePixel';
 }
 
-body#status{
-    width: 200px;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-img{
-    width: 160pt;
+#passiva{
+    font-size: 8px;
+    position: relative;
+    top: -268px;
+    left: 180px;
+    width: 160px;
+    margin-top: 15px;
 }
 
-img#iconeStatus{
-    width: 18px;
-}
-
-div{
-    margin-top: -120px;
-}
-
-article{
-    margin-bottom: 100px;
-}
-
-article p#level {
-    font-size: 14pt;
+#passivaT{
     position: relative;
     top: -260px;
-    left: 220px;
+    left: 180px;
+    width: 160px;
+    margin-top: 15px;
+    font-family: 'FontePixel';
+    font-size: 10px;
 }
 
-article p#idPersonagem{
-    font-size: 15pt;
+#infoPersonagem{
+    margin: 10px;
+    width: 350px;
+    height: 340px;
+    overflow:hidden;
+}
+
+#imgCarta{
+    display: inline-block;
+    width: 173px;
+}
+
+#level{
+    font-size: 15px;
     position: relative;
-    top: -270px;
-    left: 220px;
+    top: -200px;
+    left: 180px;
+}   
+
+#infos{
+    height: 196px;
 }
 
-div#statusForca {
-    margin-bottom: 1%;
-    width: 215px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #ccc;
+#idCarta{
+    font-size: 12px;
+    position: relative;
+    top: -195px;
+    left: 180px;
 }
 
-div#statusForca p{
+#forcaBarraFundo{
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 2px #000000;
+    font-size: 12px;
     text-align: center;
-    color: #ffff00;
-    width: 90%;
-    height: 100%;
-    border-radius: 10px;
-    background-color: #52524d;
-    text-shadow: 2px 2px #000000
-}
-
-div#statusMagia {
-    margin-top: 1%;
-    width: 215px;
+    width: 173px;
     height: 30px;
-    border-radius: 10px;
-    background-color: #ccc;
+    background-color: #cccccc;
+    margin-bottom: 5px;
 }
 
-div#statusMagia p{
-    text-align: center;
-    color: #ffff00;
-    width: 90%;
+#forcaBarra{
+    width: 85%;
     height: 100%;
-    border-radius: 10px;
-    background-color:#52524d;
-    text-shadow: 2px 2px #000000
+    background-color: #161616;  
 }
 
-div#statusDefesa {
-    margin-top: 1%;
-    width: 215px;
+#forca{
+    position: absolute;
+    top: 207px;
+    left: 40px;
+}
+
+#DefesaBarraFundo{
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 2px #000000;
+    font-size: 12px;
+    text-align: center;
+    width: 173px;
     height: 30px;
-    border-radius: 10px;
-    background-color: #ccc;
+    background-color: #cccccc;
+    margin-bottom: 5px;
 }
 
-div#statusDefesa p{
-    text-align: center;
-    color: #ffff00;
-    width: 90%;
+#DefesaBarra{
+    width: 73%;
     height: 100%;
-    border-radius: 10px;
-    background-color:#52524d;
-    text-shadow: 2px 2px #000000
+    background-color: #161616;  
 }
 
-div#statusVida {
-    margin-top: 1%;
-    width: 215px;
+#defesa{
+    position: absolute;
+    top: 244px;
+    left: 41px;
+}
+
+#MagiaBarraFundo{
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 2px #000000;
+    font-size: 12px;
+    text-align: center;
+    width: 173px;
     height: 30px;
-    border-radius: 10px;
-    background-color: #ccc;
+    background-color: #cccccc;
+    margin-bottom: 5px;
 }
 
-div#statusVida p{
-    text-align: center;
-    color: #ffff00;
-    width: 90%;
+#MagiaBarra{
+    width: 10%;
     height: 100%;
-    border-radius: 10px;
-    background-color:#52524d;
-    text-shadow: 2px 2px #000000
+    background-color: #161616;  
 }
 
-iframe#frame-spec {
-    width: 400px;
-    height: 390px;
-    border: none;
-    overflow: hidden;
+#magia{
+    position: absolute;
+    top: 279px;
+    left: 35px;
+}
+
+#HpBarraFundo{
+    color: rgb(255, 166, 0);
+    text-shadow: 2px 2px #000000;
+    font-size: 12px;
+    text-align: center;
+    width: 173px;
+    height: 30px;
+    background-color: #cccccc;
+}
+
+#HpBarra{
+    width: 60%;
+    height: 100%;
+    background-color: #161616;  
+}
+
+#hp{
+    position: absolute;
+    top: 314px;
+    left: 35px;
 }

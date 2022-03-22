@@ -2,31 +2,53 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X -UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Cartas</title>
-    <link rel="stylesheet" href="CSS/statusEstilo.css">
+    <link rel="stylesheet" href="css/statusEstilo.css">
 </head>
-<body id="status">
-    <article id="cavaleiroComum">
-        <img src="imgs/Cavaleiro_comum.png">
-        <p id="level">Level: 05</p>
-        <p id="idPersonagem">#0001C</p>
+<body>
+    <div id="infoPersonagem">
+        <div id="infos">
+            <img id="imgCarta" src="imgs/Cavaleiro_lendario.png">
+            <p id="level">Level: 05</p>
+            <p id="idCarta">#00001L</p>
+        </div>
+        <div id="skills">
+            <div id="forcaBarraFundo">
+                <p id="forca"><img src="imgs/skills/ForcaIcon.png"> 250/300</p>
+                <div id="forcaBarra">
 
-        <div id="statusForca">
-                <p id="forca"><img id="iconeStatus"src="imgs/skills/ForcaIcon.png"> 270/300</p>
-        </div>
-        <div id="statusMagia">
-            <p id="magia"><img id="iconeStatus" src="imgs/skills/MagiaIcon.png"> 30/300</p>
-        </div>
-        <div id="statusDefesa">
-            <p id="defesa"><img id="iconeStatus" src="imgs/skills/DefesaIcon.png"> 200/300</p>
-        </div>
-        <div id="statusVida">
-            <p id="vida"><img id="iconeStatus"src="imgs/skills/HpIcon.png"> 450/500</p>
-        </div>
-    </article>
+                </div>
+            </div>
 
+            <div id="DefesaBarraFundo">
+                <p id="defesa"><img src="imgs/skills/DefesaIcon.png"> 250/300</p>
+                <div id="DefesaBarra">
+    
+                </div>
+            </div>
+            
+            <div id="MagiaBarraFundo">
+                    <p id="magia"><img src="imgs/skills/MagiaIcon.png"> 250/300</p>
+                    <div id="MagiaBarra">
+        
+                    </div>
+            </div>
+
+            <div id="HpBarraFundo">
+                    <p id="hp"><img src="imgs/skills/HpIcon.png"> 250/300</p>
+                    <div id="HpBarra">
+        
+                    </div>
+            </div>
+
+        </div>
+
+        <p id="passivaT">Passiva:<br><p id="passiva">
+            Muito massa e tem 50% de chance de ativar o muito massa e refletir 10% massa.</p></p>
+    </div>
+    <!--
     <article id="estaleiroComum">
         <img src="imgs/Estalajadeiro_comum.png">
         <p id="level">Level: 05</p>
@@ -463,5 +485,6 @@
             <p id="vida"><img id="iconeStatus"src="imgs/skills/HpIcon.png"> 450/500</p>
         </div>
     </article>
+    -->
 </body>
 </html>

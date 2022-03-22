@@ -91,6 +91,7 @@ function criarLieImgsCartasComuns(imagem, id){
     var criarLi = document.createElement("li");
     var criarImg = document.createElement("img");
     criarLi.setAttribute("id","liComum")
+    criarImg.setAttribute("class", "cartaComum");
     var idAtributo = "cartaComum";
     criarImg.setAttribute("id",idAtributo + id);
     if(listaCartas == null)
@@ -129,7 +130,8 @@ function criarLieImgsCartasRaras(imagem, id){
     const listaCartas = document.getElementById("listaCartas");
     var criarLi = document.createElement("li");
     var criarImg = document.createElement("img");
-    criarLi.setAttribute("id","liRaro")
+    criarLi.setAttribute("id","liRaro");
+    criarImg.setAttribute("class", "cartaRara");
     var idAtributo = "cartaRara";
     criarImg.setAttribute("id",idAtributo + id);
     if(listaCartas == null)
@@ -170,6 +172,7 @@ function criarLieImgsCartasLendarias(imagem, id){
     var criarImg = document.createElement("img");
     var idAtributo = "cartaLendaria";
     criarLi.setAttribute("id","liLendario")
+    criarImg.setAttribute("class", "cartaLendaria");
     criarImg.setAttribute("id",idAtributo + id);
     if(listaCartas == null)
         return;
@@ -208,6 +211,7 @@ function criarLieImgsCartasMiticas(imagem, id){
     var criarLi = document.createElement("li");
     var criarImg = document.createElement("img");
     criarLi.setAttribute("id","liMitica")
+    criarImg.setAttribute("class", "cartaMitica");
     var idAtributo = "cartaMitica";
     criarImg.setAttribute("id",idAtributo + id);
     if(listaCartas == null)
@@ -247,6 +251,7 @@ function criarLieImgsTodos(imagem, id){
     var criarLi = document.createElement("li");
     var criarImg = document.createElement("img");
     criarLi.setAttribute("id","liTodas")
+    criarImg.setAttribute("class", "carta");
     var idAtributo = "carta";
     criarImg.setAttribute("id",idAtributo + id);
     if(listaCartas == null)

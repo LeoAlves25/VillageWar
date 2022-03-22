@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village War</title>
+    <link rel="icon" type="image/x-icon" href="imgs/Logo_VillageWar.png">
+    <script src="src/cartas/Cartas.js" async></script>
+    <script src="src/cartas/MinhasCartas.js" async></script>
+    <script src="src/cartas/ComprarCartas.js" async></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <ul id="menu">
+            <li><a href="index.html">Jogar</a></li>
+            <li><a href="cartas.html">Minhas Cartas</a></li>
+            <li><a href="comprar.html">Comprar Cartas</a></li>
+        </ul>
+
+        <img id="logo" src="imgs/Logo_VillageWar.png">
+
+    </header>
+    <section>
+        <ul>
+            <input type="button" id="butaoComum" class="butao" value="Comum">
+            <input type="button" id="butaoRaro" class="butao" value="Raro">
+            <input type="button" id="butaoLendario" class="butao" value="Lendário">
+            <input type="button" id="butaoMitico" class="butao" value="Mítico">
+        </ul>
+        <div id="cartas">
+            <ul id="listaCartas">
+                <!--Cartas aparecerão aqui!-->
+            </ul>
+        </div>
+    </section>
+    <footer>
+        Created by: <a id="git" href="https://github.com/LeoAlves25" target="blank">Leonardo Castro</a> and <a id="git" href="https://github.com/FelypeCl" target="blank">Felype Clayton</a>
+    </footer>
+</body>
+</html>
