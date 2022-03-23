@@ -18,22 +18,28 @@ function bauFechado(){
 
 function gerarCartas(){
     let carta1, carta2, carta3;
-    var nome,raridade,imagem;
+    var nome,raridade,imagem,idCarta;
 
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta1 = new CartaComprada(nome, raridade, imagem);
+    idCarta = gerarIdCarta(raridade);
+    carta1 = new CartaComprada(nome, raridade, imagem, idCarta);
+    minhasCartasCompradas.push(carta1.getIdCarta);
 
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta2 = new CartaComprada(nome, raridade, imagem);
+    idCarta = gerarIdCarta(raridade);
+    carta2 = new CartaComprada(nome, raridade, imagem, idCarta);
+    minhasCartasCompradas.push(carta2.getIdCarta);
 
     nome = gerarNome();
     raridade = gerarRaridade();
     imagem = gerarImagemPersonagem(nome, raridade);
-    carta3 = new CartaComprada(nome, raridade, imagem);
+    idCarta = gerarIdCarta(raridade);
+    carta3 = new CartaComprada(nome, raridade, imagem, idCarta);
+    minhasCartasCompradas.push(carta3.getIdCarta);
 
     function brilhoAoConseguirCartasRaras(){
         if(carta1.getRaridade == "Raro"){
@@ -64,10 +70,10 @@ function gerarCartas(){
     setTimeout(() => {document.getElementById("cartaComprada3").src = carta3.getImgCarta}, 600);
     brilhoAoConseguirCartasRaras();
 
-
     localStorage.setItem("cartasNome", localStorage.getItem("cartasNome") + carta1.getNome +"_" + carta2.getNome +"_" + carta3.getNome +"_");
     localStorage.setItem("cartasRaridade", localStorage.getItem("cartasRaridade") + carta1.getRaridade +"_" + carta2.getRaridade +"_" + carta3.getRaridade +"_");
     localStorage.setItem("cartasImagens", localStorage.getItem("cartasImagens") + carta1.getImgCarta +"*" + carta2.getImgCarta +"*" + carta3.getImgCarta +"*");
+    localStorage.setItem("cartasIds", localStorage.getItem("cartasIds") + carta1.getIdCarta +"*" + carta2.getIdCarta +"*" + carta3.getIdCarta +"*");
 
     console.log(carta1);
     console.log(carta2);
@@ -264,6 +270,21 @@ function gerarImagemPersonagem(nomef, raridadef){
     }
 
     return imgPersonagem;
+}
+
+function gerarIdCarta(raridadef){
+        let numeracao, raridade;
+        numeracao = minhasCartasCompradas.length + 1;
+        if(raridadef == "Comum"){
+                raridade = "C";
+        } else if(raridadef == "Raro"){
+                raridade = "R";
+        } else if(raridadef == "Lendario"){
+                raridade = "L";
+        } else if(raridadef == "Mitico"){
+                raridade = "M";
+        }
+        return ((numeracao.toString()).padStart(6, "0") + raridade);
 }
 
 function inteiroAleatorio(min, max){

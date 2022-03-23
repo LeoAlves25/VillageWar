@@ -1,4 +1,29 @@
 /*
+*  Esconder info cartas
+*/
+
+const $infoCartas = document.getElementById("infoCartas").style;
+$infoCartas.display = "none";
+
+document.getElementById("botaoFechar").addEventListener("click",() => {
+    document.getElementById("deck").style.marginRight = "0";
+    $infoCartas.display = "none";
+});
+
+/*
+*   Minhas cartas compradas
+*/
+
+let minhasCartasCompradas = []; //Para gerar cartas Ids // Quando dar refresh na pagina irá perder o valor
+// Solucionado ao igualar ao array minhasCartasIds já que um depende do outro.
+
+/*
+*   Minhas cartas
+*/
+
+let minhasCartas = []; //Cada carta do inventário como objeto // Vazio!
+
+/*
 * Cartas sub-divididas pelos nomes
 */
 
@@ -54,10 +79,41 @@ let minhasCartasMiticasImgs = minhasCartasImagens.filter(personagem =>
 console.log(minhasCartasMiticasImgs);
 
 /*
-* Funções!
+* Cartas sub-divididas pelos Ids
 */
 
+let minhasCartasIds = localStorage.getItem("cartasIds").split("*");
+minhasCartasIds.pop();
+minhasCartasCompradas = minhasCartasIds;
+console.log(minhasCartasIds);
+
+/*
+* Funções essênciais da Classe!
+*/
+
+mandarCartasCompradasParaMinhaBag();
 carregarMinhasCartas();
+
+/*
+* Cartas sub-divididas em raridade OBJs
+*/
+let minhasCartasComunsObj = minhasCartas.filter(function(carta){ return carta.raridade == "Comum"});
+console.log(minhasCartasComunsObj);
+
+let minhasCartasRarosObj = minhasCartas.filter(function(carta){ return carta.raridade == "Raro"});
+console.log(minhasCartasRarosObj);
+
+let minhasCartasLendariosObj = minhasCartas.filter(function(carta){ return carta.raridade == "Lendario"});
+console.log(minhasCartasLendariosObj);
+
+let minhasCartasMiticosObj = minhasCartas.filter(function(carta){ return carta.raridade == "Mitico"});
+console.log(minhasCartasMiticosObj);
+
+console.log(minhasCartas);
+
+/*
+*   Transformas as cartas em Objetos / carregar cartas
+*/
 
 function carregarMinhasCartas(){
     if(minhasCartasImagens.length == 0) 
@@ -70,6 +126,17 @@ function carregarMinhasCartas(){
     document.getElementById("butaoMitico").addEventListener("click", () => carregarCartasPelaRaridadeMiticas());
 }
 
+function mandarCartasCompradasParaMinhaBag(){
+    for(var contador = 0; contador < minhasCartasIds.length; ++contador){
+        criarMinhasCartasObjeto(minhasCartasNomes[contador], minhasCartasRaridades[contador],
+            minhasCartasImagens[contador], 1, minhasCartasIds[contador]);
+    }
+}
+function criarMinhasCartasObjeto(nome, raridade, imgCarta, lvl, idCarta){
+        var carta = new Carta(nome,raridade,imgCarta,lvl,idCarta);
+        minhasCartas.push(carta);
+}
+
 /*
 * Funções para cartas Comuns!
 */
@@ -78,6 +145,7 @@ function carregarCartasPelaRaridadeComum(){
     for(var contador = 0; contador < minhasCartasComunsImgs.length; ++contador){
         criarLieImgsCartasComuns(contador, contador);
     }
+    abrirStatusCartasComuns();
     document.getElementById("butaoTudo").disabled = false;
     document.getElementById("butaoComum").disabled = true;
     document.getElementById("butaoRaro").disabled = false;
@@ -118,6 +186,7 @@ function carregarCartasPelaRaridadeRara(){
     for(var contador = 0; contador < minhasCartasRarasImgs.length; ++contador){
         criarLieImgsCartasRaras(contador, contador);
     }
+    abrirStatusCartasRaras();
     document.getElementById("butaoTudo").disabled = false;
     document.getElementById("butaoComum").disabled = false;
     document.getElementById("butaoRaro").disabled = true;
@@ -158,6 +227,7 @@ function carregarCartasPelaRaridadeLendarias(){
     for(var contador = 0; contador < minhasCartasLendariasImgs.length; ++contador){
         criarLieImgsCartasLendarias(contador, contador);
     }
+    abrirStatusCartasLendarias();
     document.getElementById("butaoTudo").disabled = false;
     document.getElementById("butaoComum").disabled = false;
     document.getElementById("butaoRaro").disabled = false;
@@ -198,6 +268,7 @@ function carregarCartasPelaRaridadeMiticas(){
     for(var contador = 0; contador < minhasCartasMiticasImgs.length; ++contador){
         criarLieImgsCartasMiticas(contador, contador);
     }
+    abrirStatusCartasMiticas();
     document.getElementById("butaoTudo").disabled = false;
     document.getElementById("butaoComum").disabled = false;
     document.getElementById("butaoRaro").disabled = false;
@@ -238,6 +309,7 @@ function carregarTodasCartas(){
     for(var contador = 0; contador < minhasCartasImagens.length; ++contador){
         criarLieImgsTodos(contador,contador);
     }
+    abrirStatusCartasTodas();
     document.getElementById("butaoTudo").disabled = true;
     document.getElementById("butaoComum").disabled = false;
     document.getElementById("butaoRaro").disabled = false;
@@ -341,5 +413,145 @@ function removerLieImgsCartasTodas(raridade){
             for(var contador = 0; contador < minhasCartasMiticasImgs.length; ++contador){
                 removerLieImgsCartasMiticas(contador);
             }
+    }
+}
+
+/*
+* Status comum
+*/
+
+function statusCartasComuns(num){
+    document.getElementById("level").innerHTML = "Level: 0"+minhasCartasComunsObj[num].getLvl;
+    document.getElementById("idCarta").innerHTML = "#"+minhasCartasComunsObj[num].getIdCarta;
+    document.getElementById("imgCarta").src = minhasCartasComunsObj[num].getImgCarta;
+}
+
+function carregarStatusCartasComuns(num){
+    var carta = "cartaComum"+num;
+    var $id = document.getElementById(carta);
+    if($id == null)
+        return;
+    document.getElementById(carta).addEventListener("click", () => {
+        document.getElementById("deck").style.marginRight = "30%";
+        $infoCartas.display = "block";
+        statusCartasComuns(num);
+    });
+}
+
+function abrirStatusCartasComuns(){
+    for(var contador = 0; contador < minhasCartasComunsObj.length; ++contador){
+        carregarStatusCartasComuns(contador);
+    }
+}
+
+/*
+* Status raro
+*/
+
+function statusCartasRaras(num){
+    document.getElementById("level").innerHTML = "Level: 0"+minhasCartasRarosObj[num].getLvl;
+    document.getElementById("idCarta").innerHTML = "#"+minhasCartasRarosObj[num].getIdCarta;
+    document.getElementById("imgCarta").src = minhasCartasRarosObj[num].getImgCarta;
+}
+
+function carregarStatusCartasRaras(num){
+    var carta = "cartaRara"+num;
+    var $id = document.getElementById(carta);
+    if($id == null)
+        return;
+    document.getElementById(carta).addEventListener("click", () => {
+        document.getElementById("deck").style.marginRight = "30%";
+        $infoCartas.display = "block";
+        statusCartasRaras(num);
+    });
+}
+
+function abrirStatusCartasRaras(){
+    for(var contador = 0; contador < minhasCartasRarosObj.length; ++contador){
+        carregarStatusCartasRaras(contador);
+    }
+}
+
+/*
+* Status lendario
+*/
+
+function statusCartasLendarias(num){
+    document.getElementById("level").innerHTML = "Level: 0"+minhasCartasLendariosObj[num].getLvl;
+    document.getElementById("idCarta").innerHTML = "#"+minhasCartasLendariosObj[num].getIdCarta;
+    document.getElementById("imgCarta").src = minhasCartasLendariosObj[num].getImgCarta;
+}
+
+function carregarStatusCartasLendarias(num){
+    var carta = "cartaLendaria"+num;
+    var $id = document.getElementById(carta);
+    if($id == null)
+        return;
+    document.getElementById(carta).addEventListener("click", () => {
+        document.getElementById("deck").style.marginRight = "30%";
+        $infoCartas.display = "block";
+        statusCartasLendarias(num);
+    });
+}
+
+function abrirStatusCartasLendarias(){
+    for(var contador = 0; contador < minhasCartasLendariosObj.length; ++contador){
+        carregarStatusCartasLendarias(contador);
+    }
+}
+
+/*
+* Status mitico
+*/
+
+function statusCartasMiticas(num){
+    document.getElementById("level").innerHTML = "Level: 0"+minhasCartasMiticosObj[num].getLvl;
+    document.getElementById("idCarta").innerHTML = "#"+minhasCartasMiticosObj[num].getIdCarta;
+    document.getElementById("imgCarta").src = minhasCartasMiticosObj[num].getImgCarta;
+}
+
+function carregarStatusCartasMiticas(num){
+    var carta = "cartaMitica"+num;
+    var $id = document.getElementById(carta);
+    if($id == null)
+        return;
+    document.getElementById(carta).addEventListener("click", () => {
+        document.getElementById("deck").style.marginRight = "30%";
+        $infoCartas.display = "block";
+        statusCartasMiticas(num);
+    });
+}
+
+function abrirStatusCartasMiticas(){
+    for(var contador = 0; contador < minhasCartasMiticosObj.length; ++contador){
+        carregarStatusCartasMiticas(contador);
+    }
+}
+
+/*
+* Status todas
+*/
+
+function statusCartasTodas(num){
+    document.getElementById("level").innerHTML = "Level: 0"+minhasCartas[num].getLvl;
+    document.getElementById("idCarta").innerHTML = "#"+minhasCartas[num].getIdCarta;
+    document.getElementById("imgCarta").src = minhasCartas[num].getImgCarta;
+}
+
+function carregarStatusCartasTodas(num){
+    var carta = "carta"+num;
+    var $id = document.getElementById(carta);
+    if($id == null)
+        return;
+    $id.addEventListener("click", () => {
+        document.getElementById("deck").style.marginRight = "30%";
+        $infoCartas.display = "block";
+        statusCartasTodas(num);
+    });
+}
+
+function abrirStatusCartasTodas(){
+    for(var contador = 0; contador < minhasCartas.length; ++contador){
+        carregarStatusCartasTodas(contador);
     }
 }

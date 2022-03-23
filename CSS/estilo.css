@@ -54,7 +54,7 @@ img#logo{
 
 /*corpo*/
 div#deck {
-    margin-right: 30%;
+    transition: all 300ms ease;
     margin-top: 5%;
 }
 

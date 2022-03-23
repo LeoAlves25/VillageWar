@@ -13,8 +13,17 @@ p, h2{
     margin: 0;
 }
 
+#botaoFechar {
+    position: relative;
+    cursor: pointer;
+    top: -155px;
+    left: 164px;
+    height: 50px;
+    width: 50px;
+}
+
 #passiva{
-    font-size: 8px;
+    font-size: 10px;
     position: relative;
     top: -268px;
     left: 180px;
@@ -29,14 +38,13 @@ p, h2{
     width: 160px;
     margin-top: 15px;
     font-family: 'FontePixel';
-    font-size: 10px;
+    font-size: 12px;
 }
 
 #infoPersonagem{
     margin: 10px;
     width: 350px;
     height: 340px;
-    overflow:hidden;
 }
 
 #imgCarta{
@@ -45,6 +53,7 @@ p, h2{
 }
 
 #level{
+    width: 150px;
     font-size: 15px;
     position: relative;
     top: -200px;
@@ -81,8 +90,7 @@ p, h2{
 
 #forca{
     position: absolute;
-    top: 207px;
-    left: 40px;
+    margin-left: 39px;
 }
 
 #DefesaBarraFundo{
@@ -104,8 +112,8 @@ p, h2{
 
 #defesa{
     position: absolute;
-    top: 244px;
-    left: 41px;
+    margin-top: 3px;
+    margin-left: 40px;
 }
 
 #MagiaBarraFundo{
@@ -127,8 +135,8 @@ p, h2{
 
 #magia{
     position: absolute;
-    top: 279px;
-    left: 35px;
+    margin-top: 1px;
+    margin-left: 33px;
 }
 
 #HpBarraFundo{
@@ -149,6 +157,6 @@ p, h2{
 
 #hp{
     position: absolute;
-    top: 314px;
-    left: 35px;
+    margin-top: 4px;
+    margin-left: 25px;
 }
