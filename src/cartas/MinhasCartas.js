@@ -1,16 +1,4 @@
 /*
-*  Esconder info cartas
-*/
-
-const $infoCartas = document.getElementById("infoCartas").style;
-$infoCartas.display = "none";
-
-document.getElementById("botaoFechar").addEventListener("click",() => {
-    document.getElementById("deck").style.marginRight = "0";
-    $infoCartas.display = "none";
-});
-
-/*
 *   Minhas cartas compradas
 */
 
@@ -555,3 +543,15 @@ function abrirStatusCartasTodas(){
         carregarStatusCartasTodas(contador);
     }
 }
+
+/*
+*  Esconder info cartas
+*/
+
+const $infoCartas = document.getElementById("infoCartas").style;
+$infoCartas.display = "none";
+
+document.getElementById("botaoFechar").addEventListener("click",() => {
+    document.getElementById("deck").style.marginRight = "0";
+    $infoCartas.display = "none";
+});
