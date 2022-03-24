@@ -85,17 +85,28 @@ section{
 
 section input.butao{
     font-family: Arial;
-    font-size: 18pt;
+    font-size: 15pt;
     font-weight: bold;
     color: #fd5822;
     background-color: white;
     width: 105px;
     height: 40px;
-    margin: 5px 5px auto 35px;
+    margin: 5px 5px auto 5px;
     cursor: pointer;
     border-radius: 10px;
     border: none;
     transition: all 0.4s ease;
+}
+
+section input.butao:last-child{
+    color: #fd5822;
+    cursor: auto;
+    font-size: 15pt;
+    width: 155px;
+}
+
+section input.butao:last-child:hover{
+    color: #fd5822;
 }
 
 section input.butao:hover{
@@ -167,6 +178,16 @@ section input#bau{
 
 .carta:hover,.cartaComum:hover,.cartaRara:hover,.cartaLendaria:hover,.cartaMitica:hover{
     transform: scale(95%);
+}
+
+#modosDeJogo{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    top: 30px;
+    left: 55px;
+    background-image: url("../imgs/VillageWarModos.png");
+    background-repeat: no-repeat;
 }
 
 /*Rodapé*/

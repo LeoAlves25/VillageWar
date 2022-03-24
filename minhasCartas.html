@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village War</title>
     <link rel="icon" type="image/x-icon" href="imgs/Logo_VillageWar.png">
-    <script src="src/cartas/Cartas.js" async></script>
-    <script src="src/cartas/MinhasCartas.js" async></script>
-    <script src="src/cartas/ComprarCartas.js" async></script>
-    <link rel="stylesheet" href="CSS/estilo.css">
-    <link rel="stylesheet" href="CSS/statusEstilo.css">
+    <script src="src/cartas/Cartas.js" defer></script>
+    <script src="src/cartas/MinhasCartas.js" defer></script>
+    <script src="src/cartas/ComprarCartas.js" defer></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/statusEstilo.css">
 </head>
 <body>
         <header id="cabecalho">
@@ -30,6 +30,7 @@
                 <input type="button" id="butaoRaro" class="butao" value="Raro">
                 <input type="button" id="butaoLendario" class="butao" value="Lendário">
                 <input type="button" id="butaoMitico" class="butao" value="Mítico">
+                <input type="button" id="butaoQntCartas" class="butao" value="590">
             </ul>
             <div id="cartas">
                 <ul id="listaCartas">
@@ -49,30 +50,30 @@
             </div>
             <div id="skills">
                 <div id="forcaBarraFundo">
-                    <p id="forca"><img src="imgs/skills/ForcaIcon.png"> 01/50</p>
+                    <p id="forca"><img src="imgs/skills/ForcaIcon.png"></p>
                     <div id="forcaBarra">
-    
+                        <p id="forcaTxt">01/50</p>
                     </div>
                 </div>
     
-                <div id="DefesaBarraFundo">
-                    <p id="defesa"><img src="imgs/skills/DefesaIcon.png"> 50/50</p>
-                    <div id="DefesaBarra">
-        
+                <div id="defesaBarraFundo">
+                    <p id="defesa"><img src="imgs/skills/DefesaIcon.png"></p>
+                    <div id="defesaBarra">
+                        <p id="defesaTxt">01/50</p>
                     </div>
                 </div>
                 
-                <div id="MagiaBarraFundo">
-                        <p id="magia"><img src="imgs/skills/MagiaIcon.png"> 50/50</p>
-                        <div id="MagiaBarra">
-            
+                <div id="magiaBarraFundo">
+                        <p id="magia"><img src="imgs/skills/MagiaIcon.png"></p>
+                        <div id="magiaBarra">
+                            <p id="magiaTxt">01/50</p>
                         </div>
                 </div>
     
-                <div id="HpBarraFundo">
-                        <p id="hp"><img src="imgs/skills/HpIcon.png"> 250/300</p>
-                        <div id="HpBarra">
-            
+                <div id="hpBarraFundo">
+                        <p id="hp"><img src="imgs/skills/HpIcon.png"></p>
+                        <div id="hpBarra">
+                            <p id="hpTxt">01/50</p>
                         </div>
                 </div>
     

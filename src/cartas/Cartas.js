@@ -3,6 +3,7 @@ let nome;
 let imgCarta;
 let lvl;
 let idCarta;
+let forca,defesa,magia,hp;
 
 let nomeDasCartasComuns = 
     ["Ferreiro", "Estalajadeiro","Cavaleiro", "Gladiador",
@@ -17,20 +18,30 @@ let nomesDasCartasLendarias =
      "Mago", "Medico Da Peste", "Ninja", "Principe",
      "Rei"];
      
-let nomeDasCartasMiticas = ["Noel"];
+let nomeDasCartasMiticas = ["Noel", "PauloCirillo"];
 
 let raridadeDasCartas = ["Comum", "Raro","Lendario", "Mitico"];
 
-//Hp raridade// Comum: 50~~200 / Raro: 50~~200 / Lendario: 80~~250 / Mitico: 150 ~~ 300
+let passivas = [""];
+
+//Forca raridade/ Comum: 10~~30 / Raro: 20~~35 / Lendario: 30~~45 / Mitico: 40~~50
+//Defesa raridade/ Comum: 10~~30 / Raro: 20~~35 / Lendario: 30~~45 / Mitico: 40~~50
+//Magia raridade/ Comum: 10~~30 / Raro: 20~~35 / Lendario: 30~~45 / Mitico: 40~~50
+//Hp raridade/ Comum: 50~~100 / Raro: 70~~150 / Lendario: 100~~250 / Mitico: 200~~300
 
 
 class Carta {
-    constructor(nome, raridade, imgCarta, lvl, idCarta) {
+    constructor(nome, raridade, imgCarta, lvl, idCarta, forca, defesa, magia, hp, passiva) {
         this.nome = nome;
         this.raridade = raridade;
         this.imgCarta = imgCarta;
         this.lvl = lvl;
         this.idCarta = idCarta;
+        this.forca = forca;
+        this.defesa = defesa;
+        this.magia = magia;
+        this.hp = hp;
+        this.passiva = passiva;
     }
 
     get getNome(){
@@ -52,14 +63,39 @@ class Carta {
     get getIdCarta(){
         return this.idCarta;
     }
+
+    get getForca(){
+        return this.forca;
+    }
+
+    get getDefesa(){
+        return this.defesa;
+    }
+
+    get getMagia(){
+        return this.magia;
+    }
+
+    get getHp(){
+        return this.hp;
+    }
+
+    get getPassiva(){
+        return this.passiva;
+    }
 }
 
 class CartaComprada {
-    constructor(nome, raridade, imgCarta, idCarta) {
+    constructor(nome, raridade, imgCarta, idCarta, forca, defesa, magia, hp, passiva) {
         this.nome = nome;
         this.raridade = raridade;
         this.imgCarta = imgCarta;
         this.idCarta = idCarta;
+        this.forca = forca;
+        this.defesa = defesa;
+        this.magia = magia;
+        this.hp = hp;
+        this.passiva = passiva;
     }
 
     get getNome(){
@@ -76,6 +112,26 @@ class CartaComprada {
 
     get getIdCarta(){
         return this.idCarta;
+    }
+    
+    get getForca(){
+        return this.forca;
+    }
+
+    get getDefesa(){
+        return this.defesa;
+    }
+
+    get getMagia(){
+        return this.magia;
+    }
+
+    get getHp(){
+        return this.hp;
+    }
+
+    get getPassiva(){
+        return this.passiva;
     }
 }
 

@@ -20,6 +20,11 @@ p, h2{
     left: 164px;
     height: 50px;
     width: 50px;
+    transition: all 300ms ease;
+}
+
+#botaoFechar:hover{
+    transform: scale(90%);
 }
 
 #passiva{
@@ -72,7 +77,8 @@ p, h2{
 }
 
 #forcaBarraFundo{
-    color: rgb(255, 166, 0);
+    /*color: rgb(255, 166, 0);*/
+    color: white;
     text-shadow: 2px 2px #000000;
     font-size: 12px;
     text-align: center;
@@ -83,18 +89,27 @@ p, h2{
 }
 
 #forcaBarra{
+    transition: all 300ms ease;
     width: 85%;
     height: 100%;
-    background-color: #161616;  
+    background-color: #209e2aea;  
 }
 
 #forca{
     position: absolute;
+    margin-top: 2px;
     margin-left: 39px;
 }
 
-#DefesaBarraFundo{
-    color: rgb(255, 166, 0);
+#forcaTxt{
+    position: sticky;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+
+#defesaBarraFundo{
+    /*color: rgb(255, 166, 0);*/
+    color: white;
     text-shadow: 2px 2px #000000;
     font-size: 12px;
     text-align: center;
@@ -104,10 +119,11 @@ p, h2{
     margin-bottom: 5px;
 }
 
-#DefesaBarra{
+#defesaBarra{
+    transition: all 300ms ease;
     width: 73%;
     height: 100%;
-    background-color: #161616;  
+    background-color: #646464;  
 }
 
 #defesa{
@@ -116,8 +132,15 @@ p, h2{
     margin-left: 40px;
 }
 
-#MagiaBarraFundo{
-    color: rgb(255, 166, 0);
+#defesaTxt{
+    position: sticky;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+
+#magiaBarraFundo{
+    /*color: rgb(255, 166, 0);*/
+    color: white;
     text-shadow: 2px 2px #000000;
     font-size: 12px;
     text-align: center;
@@ -127,20 +150,28 @@ p, h2{
     margin-bottom: 5px;
 }
 
-#MagiaBarra{
+#magiaBarra{
+    transition: all 300ms ease;
     width: 10%;
     height: 100%;
-    background-color: #161616;  
+    background-color: #1668c5;  
 }
 
 #magia{
     position: absolute;
-    margin-top: 1px;
-    margin-left: 33px;
+    margin-top: 4px;
+    margin-left: 35px;
 }
 
-#HpBarraFundo{
-    color: rgb(255, 166, 0);
+#magiaTxt{
+    position: sticky;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+
+#hpBarraFundo{
+    /* color: rgb(255, 166, 0); */
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px #000000;
     font-size: 12px;
     text-align: center;
@@ -149,14 +180,21 @@ p, h2{
     background-color: #cccccc;
 }
 
-#HpBarra{
+#hpBarra{
+    transition: all 300ms ease;
     width: 60%;
     height: 100%;
-    background-color: #161616;  
+    background-color: #d63620;  
 }
 
 #hp{
     position: absolute;
-    margin-top: 4px;
-    margin-left: 25px;
+    margin-top: 6px;
+    margin-left: 30px;
+}
+
+#hpTxt{
+    position: sticky;
+    padding-top: 3px;
+    margin-left: 55px;
 }

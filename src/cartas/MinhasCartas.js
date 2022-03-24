@@ -63,7 +63,7 @@ let minhasCartasLendariasImgs = minhasCartasImagens.filter(personagem =>
 console.log(minhasCartasLendariasImgs);
 
 let minhasCartasMiticasImgs = minhasCartasImagens.filter(personagem => 
-    personagem == "imgs/Noel_mitico.png");
+    personagem == "imgs/Noel_mitico.png" || personagem == "imgs/PauloCirillo_mitico.png");
 console.log(minhasCartasMiticasImgs);
 
 /*
@@ -74,6 +74,41 @@ let minhasCartasIds = localStorage.getItem("cartasIds").split("*");
 minhasCartasIds.pop();
 minhasCartasCompradas = minhasCartasIds;
 console.log(minhasCartasIds);
+
+/*
+* Sub-divisão do atributos das cartas
+*/
+
+let cartasForcas = localStorage.getItem("cartasForcas").split("_");
+cartasForcas.pop();
+
+let cartasDesefas = localStorage.getItem("cartasDesefas").split("_");
+cartasDesefas.pop();
+
+let cartasMagias = localStorage.getItem("cartasMagias").split("_");
+cartasMagias.pop();
+
+let cartasHps = localStorage.getItem("cartasHps").split("_");
+cartasHps.pop();
+
+/*
+* Sub-divisão passivas
+*/
+
+let cartasPassivas = localStorage.getItem("cartasPassiva").split("_");
+cartasPassivas.pop();
+
+/*
+*  Esconder info cartas
+*/
+
+const $infoCartas = document.getElementById("infoCartas").style;
+$infoCartas.display = "none";
+
+document.getElementById("botaoFechar").addEventListener("click",() => {
+    document.getElementById("deck").style.marginRight = "0";
+    $infoCartas.display = "none";
+});
 
 /*
 * Funções essênciais da Classe!
@@ -117,11 +152,13 @@ function carregarMinhasCartas(){
 function mandarCartasCompradasParaMinhaBag(){
     for(var contador = 0; contador < minhasCartasIds.length; ++contador){
         criarMinhasCartasObjeto(minhasCartasNomes[contador], minhasCartasRaridades[contador],
-            minhasCartasImagens[contador], 1, minhasCartasIds[contador]);
+            minhasCartasImagens[contador], 1, minhasCartasIds[contador], cartasForcas[contador],
+            cartasDesefas[contador], cartasMagias[contador], cartasHps[contador], cartasPassivas[contador]);
     }
 }
-function criarMinhasCartasObjeto(nome, raridade, imgCarta, lvl, idCarta){
-        var carta = new Carta(nome,raridade,imgCarta,lvl,idCarta);
+
+function criarMinhasCartasObjeto(nome, raridade, imgCarta, lvl, idCarta, forca, defesa, magia, hp, passiva){
+        var carta = new Carta(nome,raridade,imgCarta,lvl,idCarta, forca, defesa, magia, hp, passiva);
         minhasCartas.push(carta);
 }
 
@@ -139,6 +176,7 @@ function carregarCartasPelaRaridadeComum(){
     document.getElementById("butaoRaro").disabled = false;
     document.getElementById("butaoLendario").disabled = false;
     document.getElementById("butaoMitico").disabled = false;
+    document.getElementById("butaoQntCartas").value = "Cartas: "+minhasCartasComunsImgs.length;
     removerLieImgsCartasTodas("Comum");
 }
 
@@ -180,6 +218,7 @@ function carregarCartasPelaRaridadeRara(){
     document.getElementById("butaoRaro").disabled = true;
     document.getElementById("butaoLendario").disabled = false;
     document.getElementById("butaoMitico").disabled = false;
+    document.getElementById("butaoQntCartas").value = "Cartas: "+minhasCartasRarasImgs.length;
     removerLieImgsCartasTodas("Raro");
 }
 
@@ -221,6 +260,7 @@ function carregarCartasPelaRaridadeLendarias(){
     document.getElementById("butaoRaro").disabled = false;
     document.getElementById("butaoLendario").disabled = true;
     document.getElementById("butaoMitico").disabled = false;
+    document.getElementById("butaoQntCartas").value = "Cartas: "+minhasCartasLendariasImgs.length;
     removerLieImgsCartasTodas("Lendario");
 }
 
@@ -262,6 +302,7 @@ function carregarCartasPelaRaridadeMiticas(){
     document.getElementById("butaoRaro").disabled = false;
     document.getElementById("butaoLendario").disabled = false;
     document.getElementById("butaoMitico").disabled = true;
+    document.getElementById("butaoQntCartas").value = "Cartas: "+minhasCartasMiticasImgs.length;
     removerLieImgsCartasTodas("Mitico");
 }
 
@@ -303,6 +344,7 @@ function carregarTodasCartas(){
     document.getElementById("butaoRaro").disabled = false;
     document.getElementById("butaoLendario").disabled = false;
     document.getElementById("butaoMitico").disabled = false;
+    document.getElementById("butaoQntCartas").value = "Cartas: "+minhasCartasImagens.length;
     removerLieImgsCartasTodas("Todas");
 }
 
@@ -409,9 +451,31 @@ function removerLieImgsCartasTodas(raridade){
 */
 
 function statusCartasComuns(num){
+    //barras de atributos
+    var tamanhoDaBarra
+    tamanhoDaBarra = ((minhasCartasComunsObj[num].getForca/50)*100).toString();
+    document.getElementById("forcaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasComunsObj[num].getDefesa/50)*100).toString();
+    document.getElementById("defesaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasComunsObj[num].getMagia/50)*100).toString();
+    document.getElementById("magiaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasComunsObj[num].getHp/300)*100).toString();
+    document.getElementById("hpBarra").style.width = tamanhoDaBarra+"%";
+
+    //infos
     document.getElementById("level").innerHTML = "Level: 0"+minhasCartasComunsObj[num].getLvl;
     document.getElementById("idCarta").innerHTML = "#"+minhasCartasComunsObj[num].getIdCarta;
     document.getElementById("imgCarta").src = minhasCartasComunsObj[num].getImgCarta;
+    //atributos
+    document.getElementById("forcaTxt").innerHTML = minhasCartasComunsObj[num].getForca + "/50";
+    document.getElementById("defesaTxt").innerHTML = minhasCartasComunsObj[num].getDefesa + "/50";
+    document.getElementById("magiaTxt").innerHTML = minhasCartasComunsObj[num].getMagia + "/50";
+    document.getElementById("hpTxt").innerHTML = minhasCartasComunsObj[num].getHp + "/300";
+    //passiva
+    document.getElementById("passiva").innerHTML = minhasCartasComunsObj[num].getPassiva;
 }
 
 function carregarStatusCartasComuns(num){
@@ -437,9 +501,31 @@ function abrirStatusCartasComuns(){
 */
 
 function statusCartasRaras(num){
+    //barras de atributos
+    var tamanhoDaBarra
+    tamanhoDaBarra = ((minhasCartasRarosObj[num].getForca/50)*100).toString();
+    document.getElementById("forcaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasRarosObj[num].getDefesa/50)*100).toString();
+    document.getElementById("defesaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasRarosObj[num].getMagia/50)*100).toString();
+    document.getElementById("magiaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasRarosObj[num].getHp/300)*100).toString();
+    document.getElementById("hpBarra").style.width = tamanhoDaBarra+"%";
+
+    //infos
     document.getElementById("level").innerHTML = "Level: 0"+minhasCartasRarosObj[num].getLvl;
     document.getElementById("idCarta").innerHTML = "#"+minhasCartasRarosObj[num].getIdCarta;
     document.getElementById("imgCarta").src = minhasCartasRarosObj[num].getImgCarta;
+    //atributos
+    document.getElementById("forcaTxt").innerHTML = minhasCartasRarosObj[num].getForca + "/50";
+    document.getElementById("defesaTxt").innerHTML = minhasCartasRarosObj[num].getDefesa + "/50";
+    document.getElementById("magiaTxt").innerHTML = minhasCartasRarosObj[num].getMagia + "/50";
+    document.getElementById("hpTxt").innerHTML = minhasCartasRarosObj[num].getHp + "/300";
+    //passiva
+    document.getElementById("passiva").innerHTML = minhasCartasRarosObj[num].getPassiva;
 }
 
 function carregarStatusCartasRaras(num){
@@ -465,9 +551,31 @@ function abrirStatusCartasRaras(){
 */
 
 function statusCartasLendarias(num){
+    //barras de atributos
+    var tamanhoDaBarra
+    tamanhoDaBarra = ((minhasCartasLendariosObj[num].getForca/50)*100).toString();
+    document.getElementById("forcaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasLendariosObj[num].getDefesa/50)*100).toString();
+    document.getElementById("defesaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasLendariosObj[num].getMagia/50)*100).toString();
+    document.getElementById("magiaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasLendariosObj[num].getHp/300)*100).toString();
+    document.getElementById("hpBarra").style.width = tamanhoDaBarra+"%";
+
+    //infos
     document.getElementById("level").innerHTML = "Level: 0"+minhasCartasLendariosObj[num].getLvl;
     document.getElementById("idCarta").innerHTML = "#"+minhasCartasLendariosObj[num].getIdCarta;
     document.getElementById("imgCarta").src = minhasCartasLendariosObj[num].getImgCarta;
+    //atributos
+    document.getElementById("forcaTxt").innerHTML = minhasCartasLendariosObj[num].getForca + "/50";
+    document.getElementById("defesaTxt").innerHTML = minhasCartasLendariosObj[num].getDefesa + "/50";
+    document.getElementById("magiaTxt").innerHTML = minhasCartasLendariosObj[num].getMagia + "/50";
+    document.getElementById("hpTxt").innerHTML = minhasCartasLendariosObj[num].getHp + "/300";
+    //passiva
+    document.getElementById("passiva").innerHTML = minhasCartasLendariosObj[num].getPassiva;
 }
 
 function carregarStatusCartasLendarias(num){
@@ -493,9 +601,31 @@ function abrirStatusCartasLendarias(){
 */
 
 function statusCartasMiticas(num){
+    //barras de atributos
+    var tamanhoDaBarra
+    tamanhoDaBarra = ((minhasCartasMiticosObj[num].getForca/50)*100).toString();
+    document.getElementById("forcaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasMiticosObj[num].getDefesa/50)*100).toString();
+    document.getElementById("defesaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasMiticosObj[num].getMagia/50)*100).toString();
+    document.getElementById("magiaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartasMiticosObj[num].getHp/300)*100).toString();
+    document.getElementById("hpBarra").style.width = tamanhoDaBarra+"%";
+
+    //infos
     document.getElementById("level").innerHTML = "Level: 0"+minhasCartasMiticosObj[num].getLvl;
     document.getElementById("idCarta").innerHTML = "#"+minhasCartasMiticosObj[num].getIdCarta;
     document.getElementById("imgCarta").src = minhasCartasMiticosObj[num].getImgCarta;
+    //atributos
+    document.getElementById("forcaTxt").innerHTML = minhasCartasMiticosObj[num].getForca + "/50";
+    document.getElementById("defesaTxt").innerHTML = minhasCartasMiticosObj[num].getDefesa + "/50";
+    document.getElementById("magiaTxt").innerHTML = minhasCartasMiticosObj[num].getMagia + "/50";
+    document.getElementById("hpTxt").innerHTML = minhasCartasMiticosObj[num].getHp + "/300";
+    //passiva
+    document.getElementById("passiva").innerHTML = minhasCartasMiticosObj[num].getPassiva;
 }
 
 function carregarStatusCartasMiticas(num){
@@ -513,6 +643,16 @@ function carregarStatusCartasMiticas(num){
 function abrirStatusCartasMiticas(){
     for(var contador = 0; contador < minhasCartasMiticosObj.length; ++contador){
         carregarStatusCartasMiticas(contador);
+        if(minhasCartasMiticosObj[contador].nome == "PauloCirillo"){
+            minhasCartasMiticosObj[contador].lvl = 32;
+            minhasCartasMiticosObj[contador].forca = 50;
+            minhasCartasMiticosObj[contador].defesa = 50;
+            minhasCartasMiticosObj[contador].magia = 50;
+            minhasCartasMiticosObj[contador].hp = 300;
+            //minhasCartasMiticosObj[contador].passiva = "Muito Massa! Esta passiva concede um enxame";
+            minhasCartasMiticosObj[contador].passiva = "Fizeram a lista?Muito Massa! Esta passiva concede um enxame de listas"+
+            " do BeeCrowd OH. Se o inimigo receber 'Presentation error' tomara insta kill.";
+        }
     }
 }
 
@@ -521,9 +661,31 @@ function abrirStatusCartasMiticas(){
 */
 
 function statusCartasTodas(num){
+    //barras de atributos
+    var tamanhoDaBarra
+    tamanhoDaBarra = ((minhasCartas[num].getForca/50)*100).toString();
+    document.getElementById("forcaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartas[num].getDefesa/50)*100).toString();
+    document.getElementById("defesaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartas[num].getMagia/50)*100).toString();
+    document.getElementById("magiaBarra").style.width = tamanhoDaBarra+"%";
+
+    tamanhoDaBarra = ((minhasCartas[num].getHp/300)*100).toString();
+    document.getElementById("hpBarra").style.width = tamanhoDaBarra+"%";
+
+    //infos
     document.getElementById("level").innerHTML = "Level: 0"+minhasCartas[num].getLvl;
     document.getElementById("idCarta").innerHTML = "#"+minhasCartas[num].getIdCarta;
     document.getElementById("imgCarta").src = minhasCartas[num].getImgCarta;
+    //atributos
+    document.getElementById("forcaTxt").innerHTML = minhasCartas[num].getForca + "/50";
+    document.getElementById("defesaTxt").innerHTML = minhasCartas[num].getDefesa + "/50";
+    document.getElementById("magiaTxt").innerHTML = minhasCartas[num].getMagia + "/50";
+    document.getElementById("hpTxt").innerHTML = minhasCartas[num].getHp + "/300";
+    //passiva
+    document.getElementById("passiva").innerHTML = minhasCartas[num].getPassiva;
 }
 
 function carregarStatusCartasTodas(num){
@@ -543,15 +705,3 @@ function abrirStatusCartasTodas(){
         carregarStatusCartasTodas(contador);
     }
 }
-
-/*
-*  Esconder info cartas
-*/
-
-const $infoCartas = document.getElementById("infoCartas").style;
-$infoCartas.display = "none";
-
-document.getElementById("botaoFechar").addEventListener("click",() => {
-    document.getElementById("deck").style.marginRight = "0";
-    $infoCartas.display = "none";
-});
