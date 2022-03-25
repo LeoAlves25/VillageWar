@@ -484,8 +484,8 @@ function carregarStatusCartasComuns(num){
     if($id == null)
         return;
     document.getElementById(carta).addEventListener("click", () => {
-        document.getElementById("deck").style.marginRight = "30%";
-        $infoCartas.display = "block";
+        ////document.getElementById("deck").style.marginRight = "20%";
+        $infoCartas.display = "inline-block";
         statusCartasComuns(num);
     });
 }
@@ -534,8 +534,8 @@ function carregarStatusCartasRaras(num){
     if($id == null)
         return;
     document.getElementById(carta).addEventListener("click", () => {
-        document.getElementById("deck").style.marginRight = "30%";
-        $infoCartas.display = "block";
+        //document.getElementById("deck").style.marginRight = "20%";
+        $infoCartas.display = "inline-block";
         statusCartasRaras(num);
     });
 }
@@ -584,8 +584,13 @@ function carregarStatusCartasLendarias(num){
     if($id == null)
         return;
     document.getElementById(carta).addEventListener("click", () => {
-        document.getElementById("deck").style.marginRight = "30%";
-        $infoCartas.display = "block";
+        /*
+         var tela = window.matchMedia("(min-width: 1651px) and (max-width: 1900px)");
+        if(tela.matches){
+            document.getElementById("deck").style.marginRight = "50%"; 
+        }*/
+        //document.getElementById("deck").style.marginRight = "20%";
+        $infoCartas.display = "inline-block";
         statusCartasLendarias(num);
     });
 }
@@ -634,8 +639,8 @@ function carregarStatusCartasMiticas(num){
     if($id == null)
         return;
     document.getElementById(carta).addEventListener("click", () => {
-        document.getElementById("deck").style.marginRight = "30%";
-        $infoCartas.display = "block";
+        //document.getElementById("deck").style.marginRight = "20%";
+        $infoCartas.display = "inline-block";
         statusCartasMiticas(num);
     });
 }
@@ -694,8 +699,8 @@ function carregarStatusCartasTodas(num){
     if($id == null)
         return;
     $id.addEventListener("click", () => {
-        document.getElementById("deck").style.marginRight = "30%";
-        $infoCartas.display = "block";
+        //document.getElementById("deck").style.marginRight = "20%";
+        $infoCartas.display = "inline-block";
         statusCartasTodas(num);
     });
 }

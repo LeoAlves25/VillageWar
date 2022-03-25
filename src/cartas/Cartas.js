@@ -29,7 +29,6 @@ let passivas = [""];
 //Magia raridade/ Comum: 10~~30 / Raro: 20~~35 / Lendario: 30~~45 / Mitico: 40~~50
 //Hp raridade/ Comum: 50~~100 / Raro: 70~~150 / Lendario: 100~~250 / Mitico: 200~~300
 
-
 class Carta {
     constructor(nome, raridade, imgCarta, lvl, idCarta, forca, defesa, magia, hp, passiva) {
         this.nome = nome;

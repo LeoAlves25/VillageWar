@@ -8,9 +8,13 @@
     padding: 0;
     margin: 0;
 }
+
 body{
     background: linear-gradient(100deg , #fd4415, #fa7d0f);
+    height: 100vh;
+    overflow: hidden;
 }
+
 a{
     color: #fd5822;
     text-decoration: none;
@@ -53,9 +57,49 @@ img#logo{
 }
 
 /*corpo*/
-div#deck {
+#conteudo {
+    position: relative;
+    left: 18%;
+    width: 1250px;
+    height: 750px;
+}
+
+#deck {
+    display: inline-block;
     transition: all 300ms ease;
-    margin-top: 5%;
+}
+
+#infoCartas{
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-bottom: -10px;
+}
+
+#meuDeck{
+    width: 1000px;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#credits{
+    margin-left: 1060px;
+    margin-top: -190px;
+    color: black;
+    width: 120px;
+    font-family: 'FontePixel';
+    font-size: 10pt;
+    text-align: center;
+}
+
+#git{
+    color: white;
+    text-decoration: none;
 }
 
 #telaPersonagem{
@@ -63,27 +107,16 @@ div#deck {
     height: 100%;
 }
 
-aside{
-    display: block;
-    background-color: white;
-    height: 400px;
-    width: 400px;
-    margin: -400px auto auto 68%;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-section{
+#deck{
     width: 800px;
     height: 400px;
-    position: relative;
     margin: 80px auto auto auto;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-section input.butao{
+#deck input.butao{
     font-family: Arial;
     font-size: 15pt;
     font-weight: bold;
@@ -98,22 +131,22 @@ section input.butao{
     transition: all 0.4s ease;
 }
 
-section input.butao:last-child{
+#deck input.butao:last-child{
     color: #fd5822;
     cursor: auto;
     font-size: 15pt;
     width: 155px;
 }
 
-section input.butao:last-child:hover{
+#deck input.butao:last-child:hover{
     color: #fd5822;
 }
 
-section input.butao:hover{
+#deck input.butao:hover{
     color: #862302;
 }
 
-section div#cartas{
+#cartas{
     width:750px;
     height: 340px;
     margin: 5px 0px auto 30px;
@@ -164,7 +197,7 @@ div#cartaBau{
     left: 139px;
 }
 
-section input#bau{
+#bau{
     cursor: pointer;
     position: absolute;
     bottom: 270px;
@@ -190,16 +223,4 @@ section input#bau{
     background-repeat: no-repeat;
 }
 
-/*Rodapé*/
-
-footer{
-    font-family: 'FontePixel';
-    font-size: 10pt;
-    text-align: center;
-    position: relative;
-    top: 25px;
-}
-
-footer a#git{
-    color: white;
-}
+/* Responsivo */
