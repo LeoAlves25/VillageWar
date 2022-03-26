@@ -102,8 +102,10 @@ cartasPassivas.pop();
 *  Esconder info cartas
 */
 
+let infoCartas = false; //false igual escondido / true igual
+
 const $infoCartas = document.getElementById("infoCartas").style;
-$infoCartas.display = "none";
+$infoCartas.display = "inline-block";
 
 document.getElementById("botaoFechar").addEventListener("click",() => {
     document.getElementById("deck").style.marginRight = "0";
@@ -116,6 +118,8 @@ document.getElementById("botaoFechar").addEventListener("click",() => {
 
 mandarCartasCompradasParaMinhaBag();
 carregarMinhasCartas();
+
+
 
 /*
 * Cartas sub-divididas em raridade OBJs
@@ -476,6 +480,41 @@ function statusCartasComuns(num){
     document.getElementById("hpTxt").innerHTML = minhasCartasComunsObj[num].getHp + "/300";
     //passiva
     document.getElementById("passiva").innerHTML = minhasCartasComunsObj[num].getPassiva;
+    //adicionar ao deck
+    var $addDeck = document.getElementById("addDeck");
+    var $rmvDeck = document.getElementById("removerDeck");
+    $rmvDeck.style.backgroundColor = sessionStorage.getItem("deck").length >= 7 ? "#f04f3e" : "#cccccc";
+    $addDeck.style.backgroundColor = sessionStorage.getItem("deck").length == 23 ? "#cccccc" : "#f04f3e";
+    $addDeck.onclick = () => {
+        if(deckIds.length >= 0 && deckIds.length <= 2){ // condição contando como indexada
+            if(!deckLocal.includes(minhasCartasComunsObj[num].getIdCarta) && !deckIds.includes(minhasCartasComunsObj[num].getIdCarta)){
+                deckLocal.push((minhasCartasComunsObj[num].getIdCarta));
+                console.log(deckLocal)
+                sessionStorage.setItem("deck", deckLocal);        
+                document.location.reload(true);
+            } else {
+                alert("Você já adicionou esta carta ao deck.");
+            }
+        } else {
+            alert("Você já adicionou as 3 cartas.");
+        }
+    };
+    
+    $rmvDeck.onclick = () => {
+        if(deck[0].getIdCarta == minhasCartasComunsObj[num].getIdCarta){
+            if(deckIds.length == 0)
+                return;
+            if(sessionStorage.getItem("deck").length == 7){
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+            } else {
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+            }
+            deck.splice(0, 1);
+            document.location.reload(true);
+            } else {
+                alert("Você não possui esta carta no deck! ou ela não é a carta #1");
+        }
+    };
 }
 
 function carregarStatusCartasComuns(num){
@@ -526,6 +565,41 @@ function statusCartasRaras(num){
     document.getElementById("hpTxt").innerHTML = minhasCartasRarosObj[num].getHp + "/300";
     //passiva
     document.getElementById("passiva").innerHTML = minhasCartasRarosObj[num].getPassiva;
+    //adicionar ao deck
+    var $addDeck = document.getElementById("addDeck");
+    var $rmvDeck = document.getElementById("removerDeck");
+    $rmvDeck.style.backgroundColor = sessionStorage.getItem("deck").length >= 7 ? "#f04f3e" : "#cccccc";
+    $addDeck.style.backgroundColor = sessionStorage.getItem("deck").length == 23 ? "#cccccc" : "#f04f3e";
+    $addDeck.onclick = () => {
+        if(deckIds.length >= 0 && deckIds.length <= 2){ // condição contando como indexada
+            if(!deckLocal.includes(minhasCartasRarosObj[num].getIdCarta) && !deckIds.includes(minhasCartasRarosObj[num].getIdCarta)){
+                deckLocal.push((minhasCartasRarosObj[num].getIdCarta));
+                console.log(deckLocal)
+                sessionStorage.setItem("deck", deckLocal);        
+                document.location.reload(true);
+            } else {
+                alert("Você já adicionou esta carta ao deck.");
+            }
+        } else {
+            alert("Você já adicionou as 3 cartas.");
+        }
+    };
+    
+    $rmvDeck.onclick = () => {
+        if(deck[0].getIdCarta == minhasCartasRarosObj[num].getIdCarta){
+            if(deckIds.length == 0)
+                return;
+            if(sessionStorage.getItem("deck").length == 7){
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+            } else {
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+            }
+            deck.splice(0, 1);
+            document.location.reload(true);
+            } else {
+                alert("Você não possui esta carta no deck! ou ela não é a carta #1");
+        }
+    };
 }
 
 function carregarStatusCartasRaras(num){
@@ -535,7 +609,7 @@ function carregarStatusCartasRaras(num){
         return;
     document.getElementById(carta).addEventListener("click", () => {
         //document.getElementById("deck").style.marginRight = "20%";
-        $infoCartas.display = "inline-block";
+        //$infoCartas.display = "inline-block";
         statusCartasRaras(num);
     });
 }
@@ -576,6 +650,41 @@ function statusCartasLendarias(num){
     document.getElementById("hpTxt").innerHTML = minhasCartasLendariosObj[num].getHp + "/300";
     //passiva
     document.getElementById("passiva").innerHTML = minhasCartasLendariosObj[num].getPassiva;
+    //adicionar ao deck
+    var $addDeck = document.getElementById("addDeck");
+    var $rmvDeck = document.getElementById("removerDeck");
+    $rmvDeck.style.backgroundColor = sessionStorage.getItem("deck").length >= 7 ? "#f04f3e" : "#cccccc";
+    $addDeck.style.backgroundColor = sessionStorage.getItem("deck").length == 23 ? "#cccccc" : "#f04f3e";
+    $addDeck.onclick = () => {
+        if(deckIds.length >= 0 && deckIds.length <= 2){ // condição contando como indexada
+            if(!deckLocal.includes(minhasCartasLendariosObj[num].getIdCarta) && !deckIds.includes(minhasCartasLendariosObj[num].getIdCarta)){
+                deckLocal.push((minhasCartasLendariosObj[num].getIdCarta));
+                console.log(deckLocal)
+                sessionStorage.setItem("deck", deckLocal);        
+                document.location.reload(true);
+            } else {
+                alert("Você já adicionou esta carta ao deck.");
+            }
+        } else {
+            alert("Você já adicionou as 3 cartas.");
+        }
+    };
+
+    $rmvDeck.onclick = () => {
+        if(deck[0].getIdCarta == minhasCartasLendariosObj[num].getIdCarta){
+            if(deckIds.length == 0)
+                return;
+            if(sessionStorage.getItem("deck").length == 7){
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+            } else {
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+            }
+            deck.splice(0, 1);
+            document.location.reload(true);
+            } else {
+                alert("Você não possui esta carta no deck! ou ela não é a carta #1");
+        }
+    };
 }
 
 function carregarStatusCartasLendarias(num){
@@ -590,7 +699,7 @@ function carregarStatusCartasLendarias(num){
             document.getElementById("deck").style.marginRight = "50%"; 
         }*/
         //document.getElementById("deck").style.marginRight = "20%";
-        $infoCartas.display = "inline-block";
+        //$infoCartas.display = "inline-block";
         statusCartasLendarias(num);
     });
 }
@@ -631,6 +740,41 @@ function statusCartasMiticas(num){
     document.getElementById("hpTxt").innerHTML = minhasCartasMiticosObj[num].getHp + "/300";
     //passiva
     document.getElementById("passiva").innerHTML = minhasCartasMiticosObj[num].getPassiva;
+    //adicionar ao deck
+    var $addDeck = document.getElementById("addDeck");
+    var $rmvDeck = document.getElementById("removerDeck");
+    $rmvDeck.style.backgroundColor = sessionStorage.getItem("deck").length >= 7 ? "#f04f3e" : "#cccccc";
+    $addDeck.style.backgroundColor = sessionStorage.getItem("deck").length == 23 ? "#cccccc" : "#f04f3e";
+    $addDeck.onclick = () => {
+        if(deckIds.length >= 0 && deckIds.length <= 2){ // condição contando como indexada
+            if(!deckLocal.includes(minhasCartasMiticosObj[num].getIdCarta) && !deckIds.includes(minhasCartasMiticosObj[num].getIdCarta)){
+                deckLocal.push((minhasCartasMiticosObj[num].getIdCarta));
+                console.log(deckLocal)
+                sessionStorage.setItem("deck", deckLocal);        
+                document.location.reload(true);
+            } else {
+                alert("Você já adicionou esta carta ao deck.");
+            }
+        } else {
+            alert("Você já adicionou as 3 cartas.");
+        }
+    };
+
+    $rmvDeck.onclick = () => {
+        if(deck[0].getIdCarta == minhasCartasMiticosObj[num].getIdCarta){
+            if(deckIds.length == 0)
+                return;
+            if(sessionStorage.getItem("deck").length == 7){
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+            } else {
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+            }
+            deck.splice(0, 1);
+            document.location.reload(true);
+            } else {
+                alert("Você não possui esta carta no deck! ou ela não é a carta #1");
+        }
+    };
 }
 
 function carregarStatusCartasMiticas(num){
@@ -640,7 +784,7 @@ function carregarStatusCartasMiticas(num){
         return;
     document.getElementById(carta).addEventListener("click", () => {
         //document.getElementById("deck").style.marginRight = "20%";
-        $infoCartas.display = "inline-block";
+        //$infoCartas.display = "inline-block";
         statusCartasMiticas(num);
     });
 }
@@ -691,6 +835,41 @@ function statusCartasTodas(num){
     document.getElementById("hpTxt").innerHTML = minhasCartas[num].getHp + "/300";
     //passiva
     document.getElementById("passiva").innerHTML = minhasCartas[num].getPassiva;
+    //adicionar ao deck
+    var $addDeck = document.getElementById("addDeck");
+    var $rmvDeck = document.getElementById("removerDeck");
+    $rmvDeck.style.backgroundColor = sessionStorage.getItem("deck").length >= 7 ? "#f04f3e" : "#cccccc";
+    $addDeck.style.backgroundColor = sessionStorage.getItem("deck").length == 23 ? "#cccccc" : "#f04f3e";
+    $addDeck.onclick = () => {
+        if(deckIds.length >= 0 && deckIds.length <= 2){ // condição contando como indexada
+            if(!deckLocal.includes(minhasCartas[num].getIdCarta) && !deckIds.includes(minhasCartas[num].getIdCarta)){
+                deckLocal.push((minhasCartas[num].getIdCarta));
+                console.log(deckLocal)
+                sessionStorage.setItem("deck", deckLocal);        
+                document.location.reload(true);
+            } else {
+                alert("Você já adicionou esta carta ao deck.");
+            }
+        } else {
+            alert("Você já adicionou as 3 cartas.");
+        }
+    };
+
+    $rmvDeck.onclick = () => {
+        if(deck[0].getIdCarta == minhasCartas[num].getIdCarta){
+            if(deckIds.length == 0)
+                return;
+            if(sessionStorage.getItem("deck").length == 7){
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+            } else {
+                sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+            }
+            deck.splice(0, 1);
+            document.location.reload(true);
+            } else {
+                alert("Você não possui esta carta no deck! ou ela não é a carta #1");
+        }
+    };
 }
 
 function carregarStatusCartasTodas(num){
@@ -700,7 +879,7 @@ function carregarStatusCartasTodas(num){
         return;
     $id.addEventListener("click", () => {
         //document.getElementById("deck").style.marginRight = "20%";
-        $infoCartas.display = "inline-block";
+        //$infoCartas.display = "inline-block";
         statusCartasTodas(num);
     });
 }

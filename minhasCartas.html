@@ -9,6 +9,7 @@
     <script src="src/cartas/Cartas.js" defer></script>
     <script src="src/cartas/MinhasCartas.js" defer></script>
     <script src="src/cartas/ComprarCartas.js" defer></script>
+    <script src="src/cartas/Deck.js" defer></script>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/statusEstilo.css">
 </head>
@@ -45,37 +46,37 @@
         <aside id="infoCartas">
             <div id="infoPersonagem">
                 <div id="infos">
-                    <img id="imgCarta" src="imgs/Cavaleiro_lendario.png">
+                    <img id="imgCarta" src="imgs/indefinido.png">
                     <img id="botaoFechar" src="imgs/botaoX.png">
-                    <p id="level">Level: 05</p>
-                    <p id="idCarta">#00001L</p>
+                    <p id="level">Level: ??</p>
+                    <p id="idCarta">#???????</p>
                 </div>
                 <div id="skills">
                     <div id="forcaBarraFundo">
                         <p id="forca"><img src="imgs/skills/ForcaIcon.png"></p>
                         <div id="forcaBarra">
-                            <p id="forcaTxt">01/50</p>
+                            <p id="forcaTxt">??/50</p>
                         </div>
                     </div>
         
                     <div id="defesaBarraFundo">
                         <p id="defesa"><img src="imgs/skills/DefesaIcon.png"></p>
                         <div id="defesaBarra">
-                            <p id="defesaTxt">01/50</p>
+                            <p id="defesaTxt">??/50</p>
                         </div>
                     </div>
                     
                     <div id="magiaBarraFundo">
                             <p id="magia"><img src="imgs/skills/MagiaIcon.png"></p>
                             <div id="magiaBarra">
-                                <p id="magiaTxt">01/50</p>
+                                <p id="magiaTxt">??/50</p>
                             </div>
                     </div>
         
                     <div id="hpBarraFundo">
                             <p id="hp"><img src="imgs/skills/HpIcon.png"></p>
                             <div id="hpBarra">
-                                <p id="hpTxt">01/50</p>
+                                <p id="hpTxt">??/50</p>
                             </div>
                     </div>
         
@@ -85,28 +86,32 @@
                     <p>Adicionar<br>ao Deck</p>
                 </div>
 
+                <div id="removerDeck">
+                    <p>Remover carta #1<br>do Deck</p>
+                </div>
+
                 <p id="passivaT">Passiva:<br><p id="passiva">
-                    Muito massa e tem 50% de chance de ativar o muito massa e refletir 10% massa.</p></p>
+                    ?????</p></p>
             </div>
         </aside>
 
         <aside id="meuDeck">
             <div id="deckCarta1">
-                <img src="imgs/Cavaleiro_raro.png">
+                <img id="deckCarta1Img" src="imgs/indefinido.png">
                 <p id="numeracaoDeck">#1</p>
-                <input type="button" value="Remover do deck">
+                <p id="numeracaoDeckId">#000000M</p>
             </div>
 
             <div id="deckCarta2">
-                <img src="imgs/Cavaleiro_raro.png">
+                <img id="deckCarta2Img" src="imgs/indefinido.png">
                 <p id="numeracaoDeck2">#2</p>
-                <input type="button" value="Remover do deck">
+                <p id="numeracaoDeckId2">#000000M</p>
             </div>
 
             <div id="deckCarta3">
-                <img src="imgs/Cavaleiro_raro.png">
+                <img id="deckCarta3Img" src="imgs/indefinido.png">
                 <p id="numeracaoDeck3">#3</p>
-                <input type="button" value="Remover do deck">
+                <p id="numeracaoDeckId3">#000000M</p>
             </div>
         </aside>
 

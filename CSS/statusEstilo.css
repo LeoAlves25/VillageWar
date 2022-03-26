@@ -207,11 +207,30 @@ p, h2{
     font-size: 10.5px;
     width: 173px;
     height: 40px;
-    background-color: #f04f3e;
+    background-color: #cccccc;
     transition: all 300ms ease;
 }
 
 #addDeck:hover{
+    transform: scale(95%);
+}
+
+#removerDeck{
+    margin-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-size: 10.5px;
+    width: 173px;
+    height: 40px;
+    background-color: #cccccc;
+    transition: all 300ms ease;
+    position: relative;
+    top: -46px;
+    left: 180px;
+}
+
+#removerDeck:hover{
     transform: scale(95%);
 }
 
@@ -251,51 +270,6 @@ p, h2{
     width: 153px;
 }
 
-#deckCarta1 input{
-    cursor: pointer;
-    height: 30px;
-    width: 130px;
-    font-size: 8px;
-    color: white;
-    font-family: 'FontePixel';
-    background-color: #f04f3e;
-    border: none;
-    position: relative;
-    left: 158px;
-    top: -63px;
-    transition: all 300ms ease;
-}
-
-#deckCarta2 input{
-    cursor: pointer;
-    height: 30px;
-    width: 130px;
-    font-size: 8px;
-    color: white;
-    font-family: 'FontePixel';
-    background-color: #f04f3e;
-    border: none;
-    position: relative;
-    left: 158px;
-    top: -63px;
-    transition: all 300ms ease;
-}
-
-#deckCarta3 input{
-    cursor: pointer;
-    height: 30px;
-    width: 130px;
-    font-size: 8px;
-    color: white;
-    font-family: 'FontePixel';
-    background-color: #f04f3e;
-    border: none;
-    position: relative;
-    left: 158px;
-    top: -63px;
-    transition: all 300ms ease;
-}
-
 #numeracaoDeck{
     position: relative;
     top: -178px;
@@ -314,6 +288,23 @@ p, h2{
     left: 155px;
 }
 
-#deckCarta1 input:hover, #deckCarta2 input:hover, #deckCarta3 input:hover{
-    transform: scale(95%);
+#numeracaoDeckId{
+    font-size: 12px;
+    position: relative;
+    top: -178px;
+    left: 155px;
+}
+
+#numeracaoDeckId2{
+    font-size: 12px;
+    position: relative;
+    top: -178px;
+    left: 155px;
+}
+
+#numeracaoDeckId3{
+    font-size: 12px;
+    position: relative;
+    top: -178px;
+    left: 155px;
 }
