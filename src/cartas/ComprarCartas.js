@@ -4,7 +4,7 @@ function bauAberto(){
     document.getElementById("bau").src = "imgs/chest_open.png"
     document.getElementById("bau").disabled = true; 
     setTimeout(gerarCartas, 100);
-    setTimeout(bauFechado, 100);
+    setTimeout(bauFechado, 2000);
 }
 
 function bauFechado(){

@@ -2,9 +2,9 @@
 var deckIds = []; //Deck com objs
 var deckLocal = []; //Deck com #IdCards *Não Objs* (LocalStorage)
 
-if(sessionStorage.getItem("deck").length != 0){
-    deckLocal = [sessionStorage.getItem("deck")];
-    deckIds = sessionStorage.getItem("deck").split(",");
+if(localStorage.getItem("deck").length != 0){
+    deckLocal = [localStorage.getItem("deck")];
+    deckIds = localStorage.getItem("deck").split(",");
     //deckIds.pop();
 }
 
@@ -35,10 +35,10 @@ function carregarDeck(){
 function removerDoDeck(){
     if(deckIds.length == 0)
         return;
-    if(sessionStorage.getItem("deck").length == 7){
-            sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
+    if(localStorage.getItem("deck").length == 7){
+        localStorage.setItem("deck", localStorage.getItem("deck").replace(deck[0].getIdCarta, ""));
     } else {
-        sessionStorage.setItem("deck", sessionStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
+        localStorage.setItem("deck", localStorage.getItem("deck").replace(deck[0].getIdCarta +",", ""));
     }
     deck.splice(0, 1);
     document.location.reload(true);
