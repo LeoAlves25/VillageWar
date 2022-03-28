@@ -17,6 +17,7 @@ var carta3 = minhasCartas.filter(function(carta){ return carta.getIdCarta == dec
 var deck = [];
 deck.push(carta1[0],carta2[0],carta3[0]);
 console.log(deck);
+
 function carregarDeck(){
     $deckCarta1Img = document.getElementById("deckCarta1Img");
     $deckCarta1Img.src = deck[0].getImgCarta;

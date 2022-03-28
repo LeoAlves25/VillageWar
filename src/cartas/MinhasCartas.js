@@ -119,8 +119,6 @@ document.getElementById("botaoFechar").addEventListener("click",() => {
 mandarCartasCompradasParaMinhaBag();
 carregarMinhasCartas();
 
-
-
 /*
 * Cartas sub-divididas em raridade OBJs
 */

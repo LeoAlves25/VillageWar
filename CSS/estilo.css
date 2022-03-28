@@ -95,6 +95,7 @@ img#logo{
     border-radius: 15px;
     margin-left: 28%;
     margin-top: 4%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #meuDeck{
@@ -301,4 +302,182 @@ div#cartaBau{
     }
 }
 
-/* Responsivo */
+/* Pvp */
+#round{
+    font-size: 15px;
+    font-family: 'FontePixel';
+    color: white;
+    text-shadow: 2px 2px black;
+    position: relative;
+    left: 350px;
+}
+#carta1ataque{
+    position: relative;
+    top: -50px;
+    left: 40px;
+    width: 120px;
+    transition: all 300ms ease;
+}
+
+#carta2ataque{
+    position: relative;
+    top: -120px;
+    left: 110px;
+    width: 120px;
+    transition: all 300ms ease;
+}
+
+#carta3ataque{
+    position: relative;
+    top: -210px;
+    left: 50px;
+    width: 120px;
+    transition: all 300ms ease;
+}
+
+#carta1defesa{
+    position: relative;
+    top: -460px;
+    left: 640px;
+    width: 120px;
+}
+
+#carta2defesa{
+    position: relative;
+    top: -530px;
+    left: 590px;
+    width: 120px;
+}
+
+#carta3defesa{
+    position: relative;
+    top: -620px;
+    left: 660px;
+    width: 90px;
+}
+
+#cartasAtaqueInfo{
+    position: relative;
+    top: 325px;
+    left: 10px;
+    width: 350px;
+    height: 40px;
+    background-color: white;
+}
+
+#cartasDefesaInfo{
+    position: relative;
+    top: 285px;
+    left: 440px;
+    width: 350px;
+    height: 40px;
+    background-color: white;
+}
+
+#perfilAtaque1 img, #perfilAtaque2 img, #perfilAtaque3 img, #perfilDefesa1 img, #perfilDefesa2 img, #perfilDefesa3 img{
+    width: 30px;
+    background-color: #555;
+}
+
+#perfilAtaque1{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+#hpAtaque1,#hpAtaque2,#hpAtaque3{
+    font-size: 10px;
+    font-family: 'FontePixel';
+    position: relative;
+    top: -27px;
+    left: 36px;
+    color: rgb(240, 84, 64);
+}
+
+#perfilAtaque2{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: -31px;
+    left: 120px;
+}
+
+#perfilAtaque3{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: -65px;
+    left: 235px;
+}
+
+#hpDefesa1,#hpDefesa2,#hpDefesa3{
+    font-size: 10px;
+    font-family: 'FontePixel';
+    position: relative;
+    top: -27px;
+    left: 36px;
+    color: rgb(240, 84, 64);
+}
+
+#perfilDefesa1{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: 3px;
+    left: 5px;
+}
+
+#perfilDefesa2{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: -31px;
+    left: 120px;
+}
+
+#perfilDefesa3{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #555;
+    position: relative;
+    top: -65px;
+    left: 235px;
+}
+
+/* Pvm */
+
+#carta1boss{
+    position: relative;
+    top: -490px;
+    left: 550px;
+    width: 240px;
+}
+
+#hpBossFundo{
+    text-align: center;
+    position: relative;
+    top: -34px;
+    left: 36px;
+    width: 300px;
+    height: 30px;
+    background-color: rgb(31, 31, 31);
+}
+
+#hpBoss{
+    width: 70%;
+    height: 30px;
+    background-color: rgb(240, 84, 64);
+}
+
+#hpBossTexto{
+    font-size: 16px;
+    color: white;
+    font-family: 'FontePixel';
+}
