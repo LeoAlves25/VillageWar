@@ -4,7 +4,7 @@ function bauAberto(){
     document.getElementById("bau").src = "imgs/chest_open.png"
     document.getElementById("bau").disabled = true; 
     setTimeout(gerarCartas, 100);
-    setTimeout(bauFechado, 2000);
+    setTimeout(bauFechado, 100);
 }
 
 function bauFechado(){
@@ -13,9 +13,9 @@ function bauFechado(){
     document.getElementById("cartaComprada1").style.boxShadow = "none"; 
     document.getElementById("cartaComprada2").style.boxShadow = "none"; 
     document.getElementById("cartaComprada3").style.boxShadow = "none"; 
-    document.getElementById("cartaComprada1").src = "imgs/indefinido.png";
-    document.getElementById("cartaComprada2").src = "imgs/indefinido.png";
-    document.getElementById("cartaComprada3").src = "imgs/indefinido.png";
+    document.getElementById("cartaComprada1").src = "imgs/personagens/indefinido.png";
+    document.getElementById("cartaComprada2").src = "imgs/personagens/indefinido.png";
+    document.getElementById("cartaComprada3").src = "imgs/personagens/indefinido.png";
 }
 
 function gerarCartas(){
@@ -192,108 +192,108 @@ function gerarImagemPersonagem(nomef, raridadef){
             case "Comum":
                     switch(nome){
                         case "Ferreiro":
-                                imgPersonagem = "imgs/Ferreiro_comum.png";
+                                imgPersonagem = "imgs/personagens/Ferreiro/Ferreiro_comum.png";
                         break;
             
                         case "Estalajadeiro":
-                                imgPersonagem = "imgs/Estalajadeiro_comum.png";
+                                imgPersonagem = "imgs/personagens/Estalajadeiro/Estalajadeiro_comum.png";
                         break;
             
                         case "Cavaleiro":
-                                imgPersonagem = "imgs/Cavaleiro_comum.png";
+                                imgPersonagem = "imgs/personagens/Cavaleiro/Cavaleiro_comum.png";
                         break;
             
                         case "Gladiador":
-                                imgPersonagem = "imgs/Gladiador_comum.png";
+                                imgPersonagem = "imgs/personagens/Gladiador/Gladiador_comum.png";
                         break;
             
                         case "Mago":
-                                imgPersonagem = "imgs/Mago_comum.png";
+                                imgPersonagem = "imgs/personagens/Mago/Mago_comum.png";
                         break;
             
                         case "Medico Da Peste":
-                                imgPersonagem = "imgs/MedicoDaPeste_comum.png";
+                                imgPersonagem = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_comum.png";
                         break;
             
                         case "Ninja":
-                                imgPersonagem = "imgs/Ninja_comum.png";
+                                imgPersonagem = "imgs/personagens/Ninja/Ninja_comum.png";
                         break;
                     }
             break;
             case "Raro":
                 switch(nome){
                         case "Ferreiro":
-                                imgPersonagem = "imgs/Ferreiro_raro.png";
+                                imgPersonagem = "imgs/personagens/Ferreiro/Ferreiro_raro.png";
                         break;
             
                         case "Estalajadeiro":
-                                imgPersonagem = "imgs/Estalajadeiro_raro.png";
+                                imgPersonagem = "imgs/personagens/Estalajadeiro/Estalajadeiro_raro.png";
                         break;
             
                         case "Cavaleiro":
-                                imgPersonagem = "imgs/Cavaleiro_raro.png";
+                                imgPersonagem = "imgs/personagens/Cavaleiro/Cavaleiro_raro.png";
                         break;
             
                         case "Gladiador":
-                                imgPersonagem = "imgs/Gladiador_raro.png";
+                                imgPersonagem = "imgs/personagens/Gladiador/Gladiador_raro.png";
                         break;
             
                         case "Mago":
-                                imgPersonagem = "imgs/Mago_raro.png";
+                                imgPersonagem = "imgs/personagens/Mago/Mago_raro.png";
                         break;
             
                         case "Medico Da Peste":
-                                imgPersonagem = "imgs/MedicoDaPeste_raro.png";
+                                imgPersonagem = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_raro.png";
                         break;
             
                         case "Ninja":
-                                imgPersonagem = "imgs/Ninja_raro.png";
+                                imgPersonagem = "imgs/personagens/Ninja/Ninja_raro.png";
                         break;
                 }
             break;
             case "Lendario":
                 switch(nome){
                         case "Ferreiro":
-                                imgPersonagem = "imgs/Ferreiro_lendario.png";
+                                imgPersonagem = "imgs/personagens/Ferreiro/Ferreiro_lendario.png";
                         break;
             
                         case "Estalajadeiro":
-                                imgPersonagem = "imgs/Estalajadeiro_lendario.png";
+                                imgPersonagem = "imgs/personagens/Estalajadeiro/Estalajadeiro_lendario.png";
                         break;
             
                         case "Cavaleiro":
-                                imgPersonagem = "imgs/Cavaleiro_lendario.png";
+                                imgPersonagem = "imgs/personagens/Cavaleiro/Cavaleiro_lendario.png";
                         break;
             
                         case "Gladiador":
-                                imgPersonagem = "imgs/Gladiador_lendario.png";
+                                imgPersonagem = "imgs/personagens/Gladiador/Gladiador_lendario.png";
                         break;
             
                         case "Mago":
-                                imgPersonagem = "imgs/Mago_lendario.png";
+                                imgPersonagem = "imgs/personagens/Mago/Mago_lendario.png";
                         break;
             
                         case "Medico Da Peste":
-                                imgPersonagem = "imgs/MedicoDaPeste_lendario.png";
+                                imgPersonagem = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_lendario.png";
                         break;
             
                         case "Ninja":
-                                imgPersonagem = "imgs/Ninja_lendario.png";
+                                imgPersonagem = "imgs/personagens/Ninja/Ninja_lendario.png";
                         break;
             
                         case "Principe":
-                                imgPersonagem = "imgs/Principe_lendario.png";
+                                imgPersonagem = "imgs/personagens/Principe/Principe_lendario.png";
                         break;
             
                         case "Rei":
-                                imgPersonagem = "imgs/Rei_lendario.png";
+                                imgPersonagem = "imgs/personagens/Rei/Rei_lendario.png";
                         break;
                 }
             break;
             case "Mitico":
                 switch(nome){
                         case "Noel":
-                                imgPersonagem = "imgs/Noel_mitico.png";
+                                imgPersonagem = "imgs/personagens/Noel/Noel_mitico.png";
                         break;
 
                         case "PauloCirillo":

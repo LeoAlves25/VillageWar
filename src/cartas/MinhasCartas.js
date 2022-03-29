@@ -41,29 +41,29 @@ minhasCartasImagens.pop();
 console.log(minhasCartasImagens);
 
 let minhasCartasComunsImgs = minhasCartasImagens.filter(personagem => 
-    personagem == "imgs/Gladiador_comum.png" || personagem == "imgs/Cavaleiro_comum.png"
-    || personagem == "imgs/Estalajadeiro_comum.png" || personagem == "imgs/Ferreiro_comum.png"
-    || personagem == "imgs/Mago_comum.png" || personagem == "imgs/MedicoDaPeste_comum.png"
-    || personagem == "imgs/Ninja_comum.png");
+    personagem == "imgs/personagens/Gladiador/Gladiador_comum.png" || personagem == "imgs/personagens/Cavaleiro/Cavaleiro_comum.png"
+    || personagem == "imgs/personagens/Estalajadeiro/Estalajadeiro_comum.png" || personagem == "imgs/personagens/Ferreiro/Ferreiro_comum.png"
+    || personagem == "imgs/personagens/Mago/Mago_comum.png" || personagem == "imgs/personagens/MedicoDaPeste/MedicoDaPeste_comum.png"
+    || personagem == "imgs/personagens/Ninja/Ninja_comum.png");
 console.log(minhasCartasComunsImgs);
 
 let minhasCartasRarasImgs = minhasCartasImagens.filter(personagem => 
-    personagem == "imgs/Gladiador_raro.png" || personagem == "imgs/Cavaleiro_raro.png"
-    || personagem == "imgs/Estalajadeiro_raro.png" || personagem == "imgs/Ferreiro_raro.png"
-    || personagem == "imgs/Mago_raro.png" || personagem == "imgs/MedicoDaPeste_raro.png"
-    || personagem == "imgs/Ninja_raro.png");
+    personagem == "imgs/personagens/Gladiador/Gladiador_raro.png" || personagem == "imgs/personagens/Cavaleiro/Cavaleiro_raro.png"
+    || personagem == "imgs/personagens/Estalajadeiro/Estalajadeiro_raro.png" || personagem == "imgs/personagens/Ferreiro/Ferreiro_raro.png"
+    || personagem == "imgs/personagens/Mago/Mago_raro.png" || personagem == "imgs/personagens/MedicoDaPeste/MedicoDaPeste_raro.png"
+    || personagem == "imgs/personagens/Ninja/Ninja_raro.png");
 console.log(minhasCartasRarasImgs);
 
 let minhasCartasLendariasImgs = minhasCartasImagens.filter(personagem => 
-    personagem == "imgs/Gladiador_lendario.png" || personagem == "imgs/Cavaleiro_lendario.png"
-    || personagem == "imgs/Estalajadeiro_lendario.png" || personagem == "imgs/Ferreiro_lendario.png"
-    || personagem == "imgs/Mago_lendario.png" || personagem == "imgs/MedicoDaPeste_lendario.png"
-    || personagem == "imgs/Ninja_lendario.png" || personagem == "imgs/Principe_lendario.png"
-    || personagem == "imgs/Rei_lendario.png");
+    personagem == "imgs/personagens/Gladiador/Gladiador_lendario.png" || personagem == "imgs/personagens/Cavaleiro/Cavaleiro_lendario.png"
+    || personagem == "imgs/personagens/Estalajadeiro/Estalajadeiro_lendario.png" || personagem == "imgs/personagens/Ferreiro/Ferreiro_lendario.png"
+    || personagem == "imgs/personagens/Mago/Mago_lendario.png" || personagem == "imgs/personagens/MedicoDaPeste/MedicoDaPeste_lendario.png"
+    || personagem == "imgs/personagens/Ninja/Ninja_lendario.png" || personagem == "imgs/personagens/Principe/Principe_lendario.png"
+    || personagem == "imgs/personagens/Rei/Rei_lendario.png");
 console.log(minhasCartasLendariasImgs);
 
 let minhasCartasMiticasImgs = minhasCartasImagens.filter(personagem => 
-    personagem == "imgs/Noel_mitico.png" || personagem == "imgs/PauloCirillo_mitico.png");
+    personagem == "imgs/personagens/Noel/Noel_mitico.png" || personagem == "imgs/PauloCirillo_mitico.png");
 console.log(minhasCartasMiticasImgs);
 
 /*

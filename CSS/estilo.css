@@ -45,6 +45,7 @@ header#cabecalho ul{
 }
 
 header#cabecalho li{
+    cursor: pointer;
     display: inline-block;
     margin-left: 20px;
 }
@@ -321,7 +322,7 @@ div#cartaBau{
 
 #carta2ataque{
     position: relative;
-    top: -120px;
+    top: -130px;
     left: 110px;
     width: 120px;
     transition: all 300ms ease;
@@ -480,4 +481,28 @@ div#cartaBau{
     font-size: 16px;
     color: white;
     font-family: 'FontePixel';
+}
+
+#carta1ataquePvm{
+    position: relative;
+    top: -50px;
+    left: 40px;
+    width: 120px;
+    transition: all 300ms ease;
+}
+
+#carta2ataquePvm{
+    position: relative;
+    top: -120px;
+    left: 110px;
+    width: 120px;
+    transition: all 300ms ease;
+}
+
+#carta3ataquePvm{
+    position: relative;
+    top: -210px;
+    left: 50px;
+    width: 120px;
+    transition: all 300ms ease;
 }

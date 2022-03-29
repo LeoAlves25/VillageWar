@@ -9,14 +9,16 @@
     <script src="src/cartas/Cartas.js" defer></script>
     <script src="src/cartas/MinhasCartas.js" defer></script>
     <script src="src/cartas/ComprarCartas.js" defer></script>
+    <script src="src/jogar/Jogar.js" defer></script>
+    <script src="src/cartas/Hrefs.js" defer></script>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
     <header id="cabecalho">
         <ul id="menu">
-            <li><a href="index.html">Jogar</a></li>
-            <li><a href="minhasCartas.html">Minhas Cartas</a></li>
-            <li><a href="comprarCartas.html">Comprar Cartas</a></li>
+            <li><a onclick="abrirHtmlJogar()">Jogar</a></li>
+            <li><a onclick="abrirHtmlMinhasCartas()">Minhas Cartas</a></li>
+            <li><a onclick="abrirHtmlComprarCartas()">Comprar Cartas</a></li>
         </ul>
 
         <img id="logo" src="imgs/Logo_VillageWar.png">
@@ -27,9 +29,9 @@
 
         <div id="cartaBau">
             <ul>
-                <li><img id="cartaComprada1" src="imgs/indefinido.png"></li>
-                <li><img id="cartaComprada2" src="imgs/indefinido.png"></li>
-                <li><img id="cartaComprada3" src="imgs/indefinido.png"></li>
+                <li><img id="cartaComprada1" src="imgs/personagens/indefinido.png"></li>
+                <li><img id="cartaComprada2" src="imgs/personagens/indefinido.png"></li>
+                <li><img id="cartaComprada3" src="imgs/personagens/indefinido.png"></li>
             </ul>
         </div>
     </div>
