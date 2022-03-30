@@ -9,10 +9,10 @@ mandarCartasCompradasParaMinhaBag(); // Carregar os minhasCartas para o Jogar.js
 var deckIds = localStorage.getItem("deck").length == 0 ? "" : localStorage.getItem("deck").split(",");
 var deck = []; // Deck com as cartas em objs!
 
-var carta1 = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[0]});
-var carta2 = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[1]});
-var carta3 = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[2]});
-deck.push(carta1[0],carta2[0],carta3[0]); // Com fundo
+var carta1ataque = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[0]});
+var carta2ataque = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[1]});
+var carta3ataque = minhasCartas.filter(function(carta){ return carta.getIdCarta == deckIds[2]});
+deck.push(carta1ataque[0],carta2ataque[0],carta3ataque[0]); // Com fundo
 
 removerFundoDasCartasAtaque(deck[0]);
 removerFundoDasCartasAtaque(deck[1]);
@@ -115,7 +115,7 @@ function removerFundoDasCartasAtaque(carta) {
         case "Comum":
             switch(carta.getImgCarta){
                 case "imgs/personagens/Cavaleiro/Cavaleiro_comum.png":
-                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.gif";
                 break;
                 case "imgs/personagens/Estalajadeiro/Estalajadeiro_comum.png":
                     carta.imgCarta = "imgs/personagens/Estalajadeiro/Estalajadeiro_semfundo.png";
@@ -127,7 +127,7 @@ function removerFundoDasCartasAtaque(carta) {
                     carta.imgCarta = "imgs/personagens/Gladiador/Gladiador_semfundo.png";
                 break;
                 case "imgs/personagens/Mago/Mago_comum.png":
-                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.gif";
                 break;
                 case "imgs/personagens/MedicoDaPeste/MedicoDaPeste_comum.png":
                     carta.imgCarta = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_semfundo.gif";
@@ -140,7 +140,7 @@ function removerFundoDasCartasAtaque(carta) {
         case "Raro":
             switch(carta.getImgCarta){
                 case "imgs/personagens/Cavaleiro/Cavaleiro_raro.png":
-                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.gif";
                 break;
                 case "imgs/personagens/Estalajadeiro/Estalajadeiro_raro.png":
                     carta.imgCarta = "imgs/personagens/Estalajadeiro/Estalajadeiro_semfundo.png";
@@ -152,7 +152,7 @@ function removerFundoDasCartasAtaque(carta) {
                     carta.imgCarta = "imgs/personagens/Gladiador/Gladiador_semfundo.png";
                 break;
                 case "imgs/personagens/Mago/Mago_raro.png":
-                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.gif";
                 break;
                 case "imgs/personagens/MedicoDaPeste/MedicoDaPeste_raro.png":
                     carta.imgCarta = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_semfundo.gif";
@@ -165,7 +165,7 @@ function removerFundoDasCartasAtaque(carta) {
         case "Lendario":
             switch(carta.getImgCarta){
                 case "imgs/personagens/Cavaleiro/Cavaleiro_lendario.png":
-                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Cavaleiro/Cavaleiro_semfundo.gif";
                 break;
                 case "imgs/personagens/Estalajadeiro/Estalajadeiro_lendario.png":
                     carta.imgCarta = "imgs/personagens/Estalajadeiro/Estalajadeiro_semfundo.png";
@@ -177,7 +177,7 @@ function removerFundoDasCartasAtaque(carta) {
                     carta.imgCarta = "imgs/personagens/Gladiador/Gladiador_semfundo.png";
                 break;
                 case "imgs/personagens/Mago/Mago_lendario.png":
-                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.png";
+                    carta.imgCarta = "imgs/personagens/Mago/Mago_semfundo.gif";
                 break;
                 case "imgs/personagens/MedicoDaPeste/MedicoDaPeste_lendario.png":
                     carta.imgCarta = "imgs/personagens/MedicoDaPeste/MedicoDaPeste_semfundo.gif";
